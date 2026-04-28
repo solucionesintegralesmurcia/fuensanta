@@ -1,315 +1,609 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Tu Marca | Web Moderna y Profesional</title>
-  <meta name="description" content="Página web moderna, limpia y responsive para presentar servicios, portfolio o negocio profesional." />
-  <meta name="keywords" content="web moderna, landing page, portfolio, servicios, diseño web responsive" />
-  <meta name="author" content="Tu Nombre o Marca" />
-
-  <meta property="og:title" content="Tu Marca | Web Moderna y Profesional" />
-  <meta property="og:description" content="Diseño moderno, limpio y optimizado para móvil y escritorio." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Tu+Marca" />
-  <meta property="og:url" content="https://tudominio.com" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Clínica Dental La Fuensanta en Murcia. Implantes, Ortodoncia, Blanqueamiento. Primera revisión GRATIS.">
+<title>Clínica Dental La Fuensanta | Beniaján, Murcia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1a4a6e;
+  --primary-light: #2563a8;
+  --accent: #e8b84b;
+  --accent-dark: #c49a2e;
+  --white: #ffffff;
+  --off-white: #f8f6f2;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a5568;
+  --text-light: #718096;
+  --green: #27ae60;
+  --red: #e74c3c;
+  --whatsapp: #25D366;
+  --border: #e2e8f0;
+  --shadow: 0 4px 24px rgba(26,74,110,0.10);
+  --shadow-lg: 0 12px 48px rgba(26,74,110,0.18);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--text-dark);background:var(--white);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+button,input,select,textarea{font-family:var(--font-body);}
+.container{max-width:1140px;margin:0 auto;padding:0 20px;}
+.section{padding:80px 0;}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);color:var(--primary);margin-bottom:12px;line-height:1.2;}
+.section-subtitle{color:var(--text-mid);font-size:1.1rem;margin-bottom:48px;}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:600;font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:30px;margin-bottom:16px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:var(--transition);white-space:nowrap;}
+.btn-primary{background:var(--primary);color:var(--white);}
+.btn-primary:hover{background:var(--primary-light);transform:translateY(-2px);box-shadow:var(--shadow);}
+.btn-accent{background:var(--accent);color:var(--primary);}
+.btn-accent:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:var(--shadow);}
+.btn-whatsapp{background:var(--whatsapp);color:var(--white);}
+.btn-whatsapp:hover{background:#1da853;transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--white);border:2px solid var(--white);}
+.btn-outline:hover{background:var(--white);color:var(--primary);}
+.btn-lg{padding:18px 36px;font-size:1.1rem;}
+.text-center{text-align:center;}
+.hidden{display:none!important;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes bounceIn{0%{opacity:0;transform:scale(0.5);}80%{transform:scale(1.05);}100%{opacity:1;transform:scale(1);}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+@keyframes bounce{0%,80%,100%{transform:translateY(0);}40%{transform:translateY(-8px);}}
+.animate-fade-up{animation:fadeInUp 0.7s ease forwards;}
+.animate-delay-1{animation-delay:0.1s;opacity:0;}
+.animate-delay-2{animation-delay:0.2s;opacity:0;}
+.animate-delay-3{animation-delay:0.3s;opacity:0;}
+.animate-delay-4{animation-delay:0.4s;opacity:0;}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,74,110,0.08);transition:var(--transition);}
+#navbar .container{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{font-family:var(--font-display);font-size:1.3rem;color:var(--primary);font-weight:700;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{color:var(--text-mid);font-weight:500;font-size:0.95rem;transition:var(--transition);}
+.nav-links a:hover{color:var(--primary);}
+.nav-cta{display:flex;gap:10px;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--primary);border-radius:2px;transition:var(--transition);}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:white;padding:20px;box-shadow:var(--shadow-lg);gap:16px;}
+  .nav-cta.open{display:flex;flex-direction:column;padding:0 20px 20px;background:white;}
+}
+#hero{min-height:100vh;background:linear-gradient(135deg,#0d2e47 0%,#1a4a6e 50%,#1e5b8a 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding-top:70px;}
+#hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-blob{position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:600px;height:600px;border-radius:60% 40% 70% 30% / 50% 60% 40% 70%;background:rgba(232,184,75,0.08);animation:float 8s ease-in-out infinite;}
+.hero-content{position:relative;z-index:2;max-width:680px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,184,75,0.15);border:1px solid rgba(232,184,75,0.4);color:var(--accent);padding:8px 18px;border-radius:30px;font-size:0.85rem;font-weight:600;margin-bottom:24px;}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.5rem,7vw,4.5rem);color:var(--white);line-height:1.1;margin-bottom:8px;}
+.hero-title span{color:var(--accent);}
+.hero-location{font-size:1.1rem;color:rgba(255,255,255,0.6);margin-bottom:16px;}
+.hero-subtitle{font-size:1.2rem;color:rgba(255,255,255,0.82);margin-bottom:36px;line-height:1.6;}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px;}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;}
+.hero-stat-num{font-family:var(--font-display);font-size:2rem;color:var(--accent);font-weight:700;}
+.hero-stat-label{font-size:0.85rem;color:rgba(255,255,255,0.6);}
+.trust-bar{background:var(--off-white);padding:20px 0;border-bottom:1px solid var(--border);}
+.trust-bar-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:10px;color:var(--text-mid);font-size:0.9rem;font-weight:500;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.service-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:32px;transition:var(--transition);cursor:pointer;position:relative;overflow:hidden;}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:var(--transition);}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.service-card:hover::before{transform:scaleX(1);}
+.service-icon{font-size:2.8rem;margin-bottom:16px;}
+.service-title{font-family:var(--font-display);font-size:1.4rem;color:var(--primary);margin-bottom:10px;}
+.service-desc{color:var(--text-mid);line-height:1.6;font-size:0.95rem;margin-bottom:16px;}
+.service-price{font-weight:700;color:var(--primary-light);font-size:1rem;}
+#oferta{background:linear-gradient(135deg,var(--primary) 0%,#0d2e47 100%);position:relative;overflow:hidden;}
+.offer-content{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
+.offer-badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:800;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;padding:8px 20px;border-radius:30px;margin-bottom:24px;}
+.offer-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4rem);color:var(--white);margin-bottom:16px;}
+.offer-price{font-family:var(--font-display);font-size:clamp(3rem,10vw,6rem);color:var(--accent);font-weight:900;line-height:1;margin-bottom:8px;}
+.offer-desc{color:rgba(255,255,255,0.75);font-size:1.1rem;margin-bottom:36px;line-height:1.6;}
+.offer-features{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:36px;}
+.offer-feature{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.9);font-size:0.95rem;}
+.offer-feature::before{content:'✓';color:var(--accent);font-weight:700;}
+#testimonios{background:var(--off-white);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.testimonial-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);position:relative;}
+.testimonial-card::before{content:'"';font-family:var(--font-display);font-size:5rem;color:var(--accent);opacity:0.3;position:absolute;top:10px;right:24px;line-height:1;}
+.testimonial-stars{color:var(--accent);font-size:1.1rem;margin-bottom:14px;letter-spacing:2px;}
+.testimonial-text{color:var(--text-mid);line-height:1.7;font-size:0.97rem;margin-bottom:20px;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.testimonial-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1rem;}
+.testimonial-name{font-weight:600;color:var(--text-dark);}
+.testimonial-meta{font-size:0.82rem;color:var(--text-light);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
+.contact-item{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);}
+.contact-item:last-of-type{border-bottom:none;}
+.contact-item-icon{width:48px;height:48px;border-radius:12px;background:var(--off-white);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.contact-item-text{font-size:0.9rem;color:var(--text-light);}
+.contact-item-value{font-weight:600;color:var(--text-dark);font-size:1rem;}
+.contact-item-value a{color:var(--primary-light);}
+.contact-buttons{display:flex;flex-direction:column;gap:12px;margin-top:28px;}
+#cita-form{background:var(--off-white);border-radius:var(--radius);padding:36px;}
+.form-group{margin-bottom:18px;}
+.form-label{display:block;font-weight:600;font-size:0.88rem;color:var(--text-dark);margin-bottom:6px;}
+.form-control{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:0.97rem;color:var(--text-dark);background:var(--white);transition:var(--transition);}
+.form-control:focus{outline:none;border-color:var(--primary-light);box-shadow:0 0 0 3px rgba(37,99,168,0.1);}
+.form-control.error{border-color:var(--red);}
+.form-error{font-size:0.82rem;color:var(--red);margin-top:4px;display:none;}
+.form-control.error+.form-error{display:block;}
+.form-success{background:#e8f8f0;border:1.5px solid var(--green);border-radius:var(--radius-sm);padding:16px;color:var(--green);font-weight:600;display:none;}
+footer{background:var(--text-dark);color:rgba(255,255,255,0.7);padding:40px 0 20px;}
+.footer-inner{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;margin-bottom:32px;}
+.footer-desc{font-size:0.9rem;line-height:1.6;max-width:260px;margin-top:10px;}
+.footer-links h4{color:var(--white);margin-bottom:14px;font-size:0.95rem;}
+.footer-links ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.footer-links li a{font-size:0.9rem;transition:var(--transition);}
+.footer-links li a:hover{color:var(--accent);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:0.84rem;}
+#wa-float{position:fixed;bottom:24px;right:24px;z-index:800;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:white;font-size:1.8rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);cursor:pointer;animation:pulse 2.5s ease-in-out infinite;border:none;transition:transform 0.2s;}
+#wa-float:hover{transform:scale(1.1);}
+#chat-bubble{position:fixed;bottom:94px;right:24px;z-index:800;width:56px;height:56px;border-radius:50%;background:var(--primary);color:white;font-size:1.6rem;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);cursor:pointer;border:none;transition:var(--transition);}
+#chat-bubble:hover{background:var(--primary-light);transform:scale(1.08);}
+#chatbot{position:fixed;bottom:160px;right:24px;z-index:800;width:360px;max-height:520px;background:var(--white);border-radius:20px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden;animation:bounceIn 0.4s ease;}
+@media(max-width:400px){#chatbot{width:calc(100vw - 20px);right:10px;}}
+.chat-header{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;padding:16px 20px;display:flex;align-items:center;gap:12px;}
+.chat-avatar{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.chat-header-info{flex:1;}
+.chat-header-name{font-weight:700;font-size:1rem;}
+.chat-header-status{font-size:0.78rem;opacity:0.8;}
+.chat-close{background:none;border:none;color:white;font-size:1.4rem;cursor:pointer;line-height:1;}
+.chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:300px;}
+.chat-msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:0.9rem;line-height:1.5;animation:fadeInUp 0.3s ease;}
+.chat-msg.bot{background:var(--off-white);color:var(--text-dark);border-bottom-left-radius:4px;align-self:flex-start;}
+.chat-msg.user{background:var(--primary);color:white;border-bottom-right-radius:4px;align-self:flex-end;}
+.chat-quick-btns{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--border);}
+.quick-btn{background:var(--off-white);border:1.5px solid var(--border);border-radius:20px;padding:6px 12px;font-size:0.8rem;font-weight:600;cursor:pointer;color:var(--primary);transition:var(--transition);white-space:nowrap;}
+.quick-btn:hover{background:var(--primary);color:white;border-color:var(--primary);}
+.chat-input-area{padding:12px;border-top:1px solid var(--border);display:flex;gap:8px;}
+.chat-input{flex:1;padding:10px 14px;border:1.5px solid var(--border);border-radius:30px;font-size:0.9rem;outline:none;}
+.chat-input:focus{border-color:var(--primary-light);}
+.chat-send{background:var(--primary);color:white;border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.chat-typing{display:flex;gap:4px;align-items:center;padding:10px 14px;}
+.chat-typing span{width:7px;height:7px;border-radius:50%;background:var(--text-light);animation:bounce 1.2s infinite;}
+.chat-typing span:nth-child(2){animation-delay:0.2s;}
+.chat-typing span:nth-child(3){animation-delay:0.4s;}
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.2s ease;}
+.modal{background:var(--white);border-radius:20px;padding:36px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;animation:fadeInUp 0.3s ease;position:relative;}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-light);}
+#panel-login{min-height:100vh;background:linear-gradient(135deg,#0d2e47,#1a4a6e);display:flex;align-items:center;justify-content:center;padding:20px;}
+.login-card{background:white;border-radius:20px;padding:48px 40px;max-width:420px;width:100%;box-shadow:var(--shadow-lg);text-align:center;}
+.login-logo{font-family:var(--font-display);font-size:1.6rem;color:var(--primary);margin-bottom:8px;}
+.login-subtitle{color:var(--text-light);margin-bottom:32px;font-size:0.9rem;}
+.login-err{background:#fef2f2;color:var(--red);padding:12px;border-radius:8px;font-size:0.9rem;margin-top:12px;display:none;}
+#crm{min-height:100vh;background:#f0f4f8;display:flex;}
+.crm-sidebar{width:260px;background:linear-gradient(180deg,#0d2e47 0%,#1a4a6e 100%);flex-shrink:0;display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:100;overflow-y:auto;}
+.sidebar-header{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.sidebar-logo{font-family:var(--font-display);font-size:1.1rem;color:white;}
+.sidebar-logo span{color:var(--accent);}
+.sidebar-role{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:4px;}
+.sidebar-nav{flex:1;padding:16px 0;}
+.sidebar-section{padding:8px 20px 4px;font-size:0.7rem;letter-spacing:1.5px;color:rgba(255,255,255,0.35);text-transform:uppercase;font-weight:600;}
+.sidebar-item{display:flex;align-items:center;gap:12px;padding:12px 20px;color:rgba(255,255,255,0.7);cursor:pointer;transition:var(--transition);border-left:3px solid transparent;font-size:0.92rem;}
+.sidebar-item:hover{background:rgba(255,255,255,0.06);color:white;}
+.sidebar-item.active{background:rgba(232,184,75,0.12);color:var(--accent);border-left-color:var(--accent);}
+.sidebar-item .si-icon{font-size:1.1rem;width:20px;text-align:center;}
+.sidebar-bottom{padding:16px;border-top:1px solid rgba(255,255,255,0.08);}
+.crm-main{margin-left:260px;flex:1;padding:32px;min-height:100vh;}
+@media(max-width:900px){
+  .crm-sidebar{width:100%;position:relative;flex-direction:column;}
+  .crm-main{margin-left:0;padding:20px;}
+}
+.crm-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px;}
+.crm-topbar h2{font-family:var(--font-display);font-size:1.8rem;color:var(--primary);}
+.crm-panel{display:none;}
+.crm-panel.active{display:block;animation:fadeInUp 0.3s ease;}
+.stat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:28px;}
+.stat-card{background:white;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);}
+.stat-card-icon{font-size:2rem;margin-bottom:10px;}
+.stat-card-num{font-family:var(--font-display);font-size:2.2rem;color:var(--primary);font-weight:700;}
+.stat-card-label{color:var(--text-light);font-size:0.88rem;margin-top:4px;}
+.card{background:white;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);margin-bottom:24px;}
+.card-title{font-family:var(--font-display);font-size:1.3rem;color:var(--primary);margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:0.9rem;}
+th{background:var(--off-white);color:var(--text-dark);font-weight:600;padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.5px;}
+td{padding:14px 16px;border-bottom:1px solid var(--border);color:var(--text-mid);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--off-white);}
+.action-btn{background:none;border:1.5px solid var(--border);border-radius:8px;padding:5px 10px;font-size:0.8rem;cursor:pointer;transition:var(--transition);color:var(--text-mid);}
+.action-btn:hover{border-color:var(--primary);color:var(--primary);}
+.action-btn.wa{border-color:var(--whatsapp);color:var(--whatsapp);}
+.action-btn.wa:hover{background:var(--whatsapp);color:white;}
+.action-btn.danger{border-color:var(--red);color:var(--red);}
+.action-btn.danger:hover{background:var(--red);color:white;}
+.budget-item{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);}
+.budget-item:last-child{border-bottom:none;}
+.budget-total{background:var(--primary);color:white;border-radius:var(--radius-sm);padding:20px;margin-top:20px;display:flex;justify-content:space-between;align-items:center;}
+.budget-total-num{font-family:var(--font-display);font-size:2rem;}
+.qa-item{background:var(--off-white);border-radius:var(--radius-sm);padding:16px;margin-bottom:12px;}
+.qa-question{font-weight:700;color:var(--primary);margin-bottom:6px;font-size:0.92rem;}
+.reminder-template{background:var(--off-white);border-radius:var(--radius-sm);padding:20px;margin-bottom:16px;}
+.crm-input{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.92rem;margin-bottom:10px;transition:var(--transition);}
+.crm-input:focus{outline:none;border-color:var(--primary-light);box-shadow:0 0 0 3px rgba(37,99,168,0.08);}
+.crm-select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.92rem;margin-bottom:10px;background:white;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+#notif{position:fixed;top:20px;right:20px;z-index:2000;display:flex;flex-direction:column;gap:10px;}
+.notif-item{background:white;border-radius:12px;padding:14px 20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;font-size:0.92rem;font-weight:600;min-width:260px;animation:slideInRight 0.3s ease;}
+.notif-item.success{border-left:4px solid var(--green);}
+.notif-item.error{border-left:4px solid var(--red);}
+.notif-item.info{border-left:4px solid var(--primary);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
+.about-image{background:linear-gradient(135deg,var(--primary) 0%,#1e5b8a 100%);border-radius:var(--radius);padding:48px;text-align:center;color:white;}
+.about-features{display:flex;flex-direction:column;gap:20px;}
+.about-feature{display:flex;align-items:flex-start;gap:14px;}
+.about-feature-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.about-feature-text h4{font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.about-feature-text p{font-size:0.9rem;color:var(--text-mid);line-height:1.5;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@media(max-width:480px){
+  .hero-buttons{flex-direction:column;}
+  .hero-buttons .btn{justify-content:center;}
+  .trust-bar-inner{flex-direction:column;gap:16px;}
+  #chatbot{bottom:140px;}
+}
+</style>
 </head>
 <body>
-  <header class="header" id="top">
-    <div class="container nav">
-      <a href="#top" class="logo">TuMarca</a>
-
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav-links" id="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto" class="btn btn-small">Contacto</a>
-      </nav>
+<div id="website">
+<nav id="navbar">
+  <div class="container">
+    <a class="nav-logo" href="#hero">🦷 La <span>Fuensanta</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#testimonios">Opiniones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-cta" id="nav-cta">
+      <a href="tel:968837316" class="btn btn-primary" style="padding:10px 18px;font-size:0.9rem;">📞 Llamar</a>
+      <button class="btn btn-accent" style="padding:10px 18px;font-size:0.9rem;" onclick="openCitaModal()">Pedir Cita</button>
     </div>
-  </header>
-
-  <main>
-    <section class="hero section" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="eyebrow">Diseño moderno • Responsive • Profesional</span>
-          <h1>Una web limpia, rápida y preparada para convertir visitas en clientes</h1>
-          <p class="hero-text">
-            Presenta tu marca, tus servicios o tu portfolio con una página moderna,
-            clara y optimizada para móviles y escritorio. Ideal para negocios,
-            profesionales y proyectos personales.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#contacto" class="btn">Solicitar información</a>
-            <a href="#portfolio" class="btn btn-secondary">Ver trabajos</a>
-          </div>
-
-          <ul class="hero-features">
-            <li>Diseño responsive</li>
-            <li>Carga rápida</li>
-            <li>Estructura clara</li>
-          </ul>
-        </div>
-
-        <div class="hero-card">
-          <div class="glass-card">
-            <div class="badge">Proyecto destacado</div>
-            <h2>Tu presencia digital con imagen premium</h2>
-            <p>
-              Una estructura pensada para mostrar confianza, explicar tus servicios
-              y facilitar el contacto desde cualquier dispositivo.
-            </p>
-            <div class="stats">
-              <div class="stat">
-                <strong>100%</strong>
-                <span>Responsive</span>
-              </div>
-              <div class="stat">
-                <strong>HTML/CSS/JS</strong>
-                <span>Sin dependencias</span>
-              </div>
-              <div class="stat">
-                <strong>SEO Base</strong>
-                <span>Preparada</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up">✦ Tu sonrisa, nuestra pasión</div>
+      <h1 class="hero-title animate-fade-up animate-delay-1">Clínica Dental<br><span>La Fuensanta</span></h1>
+      <div class="hero-location animate-fade-up animate-delay-1">📍 Beniaján · Murcia</div>
+      <p class="hero-subtitle animate-fade-up animate-delay-2">Más de 15 años cuidando tu salud bucodental con tecnología de vanguardia y el trato cercano que mereces.</p>
+      <div class="hero-buttons animate-fade-up animate-delay-3">
+        <a href="tel:968837316" class="btn btn-outline btn-lg">📞 968 83 73 16</a>
+        <a href="https://wa.me/34644210097?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita" target="_blank" class="btn btn-whatsapp btn-lg">💬 WhatsApp</a>
+        <button class="btn btn-accent btn-lg" onclick="openCitaModal()">📅 Pedir Cita Gratis</button>
       </div>
-    </section>
-
-    <section class="brands section-sm">
-      <div class="container brands-row">
-        <span>Confianza</span>
-        <span>Diseño limpio</span>
-        <span>Experiencia móvil</span>
-        <span>Optimización visual</span>
-      </div>
-    </section>
-
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-tag">Servicios</span>
-          <h2>Todo lo que tu web necesita para destacar</h2>
-          <p>
-            Esta estructura se puede adaptar fácilmente a un portfolio, landing page,
-            negocio local, marca personal o escaparate de servicios.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="card">
-            <div class="card-icon">01</div>
-            <h3>Diseño moderno</h3>
-            <p>
-              Interfaz elegante, limpia y profesional, con jerarquía visual clara
-              y enfoque en la conversión.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">02</div>
-            <h3>Responsive real</h3>
-            <p>
-              Adaptación total a móvil, tablet y escritorio para que todo se vea
-              bien y funcione correctamente.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">03</div>
-            <h3>Fácil de editar</h3>
-            <p>
-              Código claro y organizado para cambiar textos, colores, imágenes,
-              enlaces y secciones sin complicarte.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt-bg" id="portfolio">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-tag">Portfolio</span>
-          <h2>Ejemplo de trabajos o proyectos</h2>
-          <p>
-            Sustituye estas tarjetas por proyectos reales, servicios realizados,
-            casos de éxito, imágenes o galerías.
-          </p>
-        </div>
-
-        <div class="portfolio-grid">
-          <article class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Proyecto web corporativo" />
-            </div>
-            <div class="project-content">
-              <h3>Proyecto Corporativo</h3>
-              <p>Diseño profesional con enfoque en confianza, servicios y contacto.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Landing page moderna" />
-            </div>
-            <div class="project-content">
-              <h3>Landing Page Moderna</h3>
-              <p>Presentación clara, visual potente y llamadas a la acción visibles.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Portfolio profesional" />
-            </div>
-            <div class="project-content">
-              <h3>Portfolio Profesional</h3>
-              <p>Ideal para mostrar trabajos, credibilidad y una imagen de marca sólida.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sobre-mi">
-      <div class="container about-grid">
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Perfil profesional" />
-        </div>
-
-        <div class="about-content">
-          <span class="section-tag">Sobre mí / Sobre la marca</span>
-          <h2>Una presentación cercana y profesional</h2>
-          <p>
-            Aquí puedes explicar quién eres, qué haces, qué te diferencia y por qué
-            deberían elegirte. Esta sección es ideal para transmitir confianza,
-            experiencia y especialización.
-          </p>
-          <p>
-            También puedes convertir este bloque en una sección de empresa, historia
-            de marca, valores o trayectoria profesional.
-          </p>
-
-          <div class="about-points">
-            <div>
-              <strong>+5 años</strong>
-              <span>de experiencia</span>
-            </div>
-            <div>
-              <strong>+50 proyectos</strong>
-              <span>realizados</span>
-            </div>
-            <div>
-              <strong>Atención directa</strong>
-              <span>y personalizada</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="container cta-box">
-        <div>
-          <span class="section-tag">¿Empezamos?</span>
-          <h2>Una página bien hecha puede marcar la diferencia</h2>
-          <p>
-            Si quieres una presencia online seria, visual y bien estructurada, esta
-            base te permite arrancar rápido y crecer después.
-          </p>
-        </div>
-        <a href="#contacto" class="btn">Quiero mi web</a>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-tag">Contacto</span>
-          <h2>Cuéntame tu proyecto</h2>
-          <p>
-            Formulario listo para personalizar. Puedes conectarlo más adelante con
-            Formspree, Netlify Forms o un backend propio.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-info">
-            <div class="info-box">
-              <h3>Email</h3>
-              <p>tucorreo@ejemplo.com</p>
-            </div>
-            <div class="info-box">
-              <h3>Teléfono</h3>
-              <p>+34 600 000 000</p>
-            </div>
-            <div class="info-box">
-              <h3>Ubicación</h3>
-              <p>Murcia, España</p>
-            </div>
-          </div>
-
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" placeholder="Tu nombre" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="email" placeholder="Tu correo" required />
-            </div>
-
-            <div class="form-group">
-              <label for="subject">Asunto</label>
-              <input type="text" id="subject" name="subject" placeholder="Asunto del mensaje" required />
-            </div>
-
-            <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" rows="6" placeholder="Cuéntame qué necesitas" required></textarea>
-            </div>
-
-            <button type="submit" class="btn full-width">Enviar mensaje</button>
-            <p class="form-message" id="form-message"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-row">
-      <p>© 2026 TuMarca. Todos los derechos reservados.</p>
-      <div class="footer-links">
-        <a href="#top">Volver arriba</a>
-        <a href="#contacto">Contacto</a>
+      <div class="hero-stats animate-fade-up animate-delay-4">
+        <div class="hero-stat"><div class="hero-stat-num">+2.500</div><div class="hero-stat-label">Pacientes atendidos</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">15+</div><div class="hero-stat-label">Años de experiencia</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">98%</div><div class="hero-stat-label">Satisfacción</div></div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="trust-bar-inner container">
+    <div class="trust-item">✅ Colegiados y certificados</div>
+    <div class="trust-item">🏆 Tecnología de última generación</div>
+    <div class="trust-item">💳 Financiación sin intereses</div>
+    <div class="trust-item">📅 Cita el mismo día</div>
+    <div class="trust-item">😌 Sedación consciente</div>
+  </div>
+</div>
+<section id="servicios" class="section">
+  <div class="container text-center">
+    <div class="badge reveal">Nuestros Tratamientos</div>
+    <h2 class="section-title reveal">Todo lo que necesita tu sonrisa</h2>
+    <p class="section-subtitle reveal">Tratamientos completos con la mejor tecnología y los mejores profesionales de Murcia</p>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon">🦷</div><div class="service-title">Implantes Dentales</div><div class="service-desc">Recupera tu sonrisa para siempre con implantes de titanio de última generación. Resultado natural y duradero garantizado.</div><div class="service-price">Desde 750€ · Financiación disponible</div></div>
+      <div class="service-card reveal"><div class="service-icon">😁</div><div class="service-title">Ortodoncia</div><div class="service-desc">Brackets metálicos, estéticos o alineadores invisibles. Dientes perfectamente alineados para todas las edades.</div><div class="service-price">Desde 1.200€ · Consulta inicial gratis</div></div>
+      <div class="service-card reveal"><div class="service-icon">✨</div><div class="service-title">Blanqueamiento</div><div class="service-desc">Blanqueamiento profesional en clínica o con férulas personalizadas para casa. Resultados visibles desde la primera sesión.</div><div class="service-price">Desde 180€</div></div>
+      <div class="service-card reveal"><div class="service-icon">🔬</div><div class="service-title">Endodoncia</div><div class="service-desc">Salvamos tu diente natural eliminando la infección con técnica rotacional y sin dolor. Rapidez y precisión garantizadas.</div><div class="service-price">Desde 250€</div></div>
+      <div class="service-card reveal"><div class="service-icon">🧹</div><div class="service-title">Limpieza Dental</div><div class="service-desc">Higiene profesional con ultrasonidos para eliminar sarro y manchas. Incluye revisión y diagnóstico completo.</div><div class="service-price">Desde 60€</div></div>
+      <div class="service-card reveal"><div class="service-icon">👶</div><div class="service-title">Odontopediatría</div><div class="service-desc">Cuidamos la salud bucodental de los más pequeños en un ambiente tranquilo y de confianza.</div><div class="service-price">Desde 35€</div></div>
+    </div>
+    <div style="margin-top:40px;" class="reveal"><button class="btn btn-primary btn-lg" onclick="openCitaModal()">Solicitar información sobre tratamientos →</button></div>
+  </div>
+</section>
+<section id="oferta" class="section">
+  <div class="container">
+    <div class="offer-content">
+      <div class="offer-badge">🎁 Oferta Especial Nuevos Pacientes</div>
+      <h2 class="offer-title reveal">Primera Revisión</h2>
+      <div class="offer-price reveal">GRATIS</div>
+      <p class="offer-desc reveal">Diagnóstico completo, revisión bucal, radiografía de orientación y presupuesto personalizado sin ningún coste ni compromiso.</p>
+      <div class="offer-features reveal">
+        <span class="offer-feature">Exploración completa</span>
+        <span class="offer-feature">Radiografía incluida</span>
+        <span class="offer-feature">Presupuesto sin compromiso</span>
+        <span class="offer-feature">Sin letra pequeña</span>
+      </div>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" class="reveal">
+        <button class="btn btn-accent btn-lg" onclick="openCitaModal()">📅 Reservar cita gratis</button>
+        <a href="https://wa.me/34644210097?text=Hola%2C%20quiero%20reservar%20mi%20primera%20revisi%C3%B3n%20gratuita" target="_blank" class="btn btn-whatsapp btn-lg">💬 Pedir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="nosotros" class="section" style="background:var(--off-white);">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div style="font-size:5rem;margin-bottom:16px;">🏥</div>
+        <div style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:8px;">La Fuensanta</div>
+        <div style="opacity:0.8;font-size:0.95rem;">Beniaján, Murcia · Desde 2009</div>
+        <div style="margin-top:24px;background:rgba(255,255,255,0.1);border-radius:12px;padding:20px;">
+          <div style="font-size:2rem;font-weight:900;font-family:var(--font-display);">4.9 ⭐</div>
+          <div style="opacity:0.8;font-size:0.88rem;margin-top:4px;">Valoración media · Google</div>
+        </div>
+      </div>
+      <div>
+        <div class="badge reveal">¿Por qué elegirnos?</div>
+        <h2 class="section-title reveal">La clínica de confianza en Beniaján</h2>
+        <p style="color:var(--text-mid);line-height:1.7;margin-bottom:28px;" class="reveal">Somos una clínica familiar con más de 15 años de experiencia en Murcia. Nuestro equipo de especialistas te ofrece tratamientos personalizados con tecnología de vanguardia y el trato cercano que mereces.</p>
+        <div class="about-features">
+          <div class="about-feature reveal"><div class="about-feature-icon">🎓</div><div class="about-feature-text"><h4>Especialistas cualificados</h4><p>Equipo de odontólogos con formación continua en las últimas técnicas y tecnologías.</p></div></div>
+          <div class="about-feature reveal"><div class="about-feature-icon">💡</div><div class="about-feature-text"><h4>Tecnología avanzada</h4><p>Radiografía digital, escáner intraoral y equipos de última generación.</p></div></div>
+          <div class="about-feature reveal"><div class="about-feature-icon">❤️</div><div class="about-feature-text"><h4>Trato personalizado</h4><p>Planes de tratamiento adaptados a tus necesidades y presupuesto.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="testimonios" class="section">
+  <div class="container text-center">
+    <div class="badge reveal">Opiniones reales</div>
+    <h2 class="section-title reveal">Lo que dicen nuestros pacientes</h2>
+    <p class="section-subtitle reveal">Más de 2.500 familias ya confían en nosotros</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">Me pusieron implantes hace un año y el resultado es increíble. El equipo es muy profesional y te explican todo con detalle. Sin duda la mejor clínica dental de la zona.</p><div class="testimonial-author"><div class="testimonial-avatar">MR</div><div><div class="testimonial-name">María Rodríguez</div><div class="testimonial-meta">Implantes · Hace 1 año</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">Llevé a mi hijo con miedo al dentista y salió encantado. Los dentistas son muy pacientes y el resultado de la ortodoncia ha sido espectacular. Muy recomendable.</p><div class="testimonial-author"><div class="testimonial-avatar">JG</div><div><div class="testimonial-name">Juan García</div><div class="testimonial-meta">Ortodoncia · Hace 8 meses</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">El blanqueamiento quedó genial. En una sola sesión noté una diferencia enorme. El trato es excelente y los precios muy razonables comparado con otras clínicas de Murcia.</p><div class="testimonial-author"><div class="testimonial-avatar">LC</div><div><div class="testimonial-name">Laura Cánovas</div><div class="testimonial-meta">Blanqueamiento · Hace 3 meses</div></div></div></div>
+    </div>
+  </div>
+</section>
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div class="badge reveal">Contacto</div>
+      <h2 class="section-title reveal">Estamos aquí para ti</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <h3 style="font-family:var(--font-display);font-size:1.8rem;color:var(--primary);margin-bottom:24px;">Encuéntranos</h3>
+        <div class="contact-item"><div class="contact-item-icon">📞</div><div><div class="contact-item-text">Teléfono</div><div class="contact-item-value"><a href="tel:968837316">968 83 73 16</a></div></div></div>
+        <div class="contact-item"><div class="contact-item-icon">💬</div><div><div class="contact-item-text">WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/34644210097" target="_blank">+34 644 210 097</a></div></div></div>
+        <div class="contact-item"><div class="contact-item-icon">📍</div><div><div class="contact-item-text">Dirección</div><div class="contact-item-value">C/ Algezares 74, 30570 – Beniaján (Murcia)</div></div></div>
+        <div class="contact-item"><div class="contact-item-icon">🕐</div><div><div class="contact-item-text">Horario</div><div class="contact-item-value">Lun–Vie: 9:00–14:00 · 16:00–20:00<br>Sáb: 9:00–13:00</div></div></div>
+        <div class="contact-buttons">
+          <a href="tel:968837316" class="btn btn-primary btn-lg" style="justify-content:center;">📞 Llamar ahora</a>
+          <a href="https://wa.me/34644210097?text=Hola%2C%20quiero%20pedir%20informaci%C3%B3n" target="_blank" class="btn btn-whatsapp btn-lg" style="justify-content:center;">💬 WhatsApp</a>
+          <button class="btn btn-accent btn-lg" style="justify-content:center;" onclick="openCitaModal()">📅 Reservar cita gratis</button>
+        </div>
+      </div>
+      <div id="cita-form">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--primary);margin-bottom:24px;">📅 Solicita tu cita</h3>
+        <div class="form-group"><label class="form-label">Nombre completo *</label><input type="text" class="form-control" id="f-nombre" placeholder="Tu nombre"><div class="form-error">Por favor, introduce tu nombre</div></div>
+        <div class="form-group"><label class="form-label">Teléfono *</label><input type="tel" class="form-control" id="f-telefono" placeholder="6XX XXX XXX"><div class="form-error">Por favor, introduce un teléfono válido</div></div>
+        <div class="form-group"><label class="form-label">Tratamiento de interés</label><select class="form-control" id="f-tratamiento"><option value="">Seleccionar tratamiento...</option><option>Primera revisión gratuita</option><option>Implantes Dentales</option><option>Ortodoncia</option><option>Blanqueamiento</option><option>Endodoncia</option><option>Limpieza Dental</option><option>Odontopediatría</option><option>Otro</option></select></div>
+        <div class="form-group"><label class="form-label">Fecha preferida</label><input type="date" class="form-control" id="f-fecha"></div>
+        <div class="form-group"><label class="form-label">Mensaje (opcional)</label><textarea class="form-control" id="f-mensaje" rows="3" placeholder="¿Algo más que debamos saber?"></textarea></div>
+        <div class="form-success" id="form-success">✅ ¡Cita solicitada! Te llamaremos en breve para confirmarla.</div>
+        <button class="btn btn-primary btn-lg" onclick="submitForm()" style="width:100%;justify-content:center;">Solicitar Cita Gratis 🎁</button>
+        <p style="font-size:0.78rem;color:var(--text-light);margin-top:10px;text-align:center;">Tus datos están protegidos y no serán cedidos a terceros</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="nav-logo" style="font-size:1.4rem;">🦷 La <span style="color:var(--accent)">Fuensanta</span></div>
+        <p class="footer-desc">Tu clínica dental de confianza en Beniaján, Murcia. Más de 15 años cuidando sonrisas.</p>
+      </div>
+      <div class="footer-links"><h4>Servicios</h4><ul><li><a href="#servicios">Implantes</a></li><li><a href="#servicios">Ortodoncia</a></li><li><a href="#servicios">Blanqueamiento</a></li><li><a href="#servicios">Endodoncia</a></li><li><a href="#servicios">Limpieza</a></li></ul></div>
+      <div class="footer-links"><h4>Contacto</h4><ul><li><a href="tel:968837316">📞 968 83 73 16</a></li><li><a href="https://wa.me/34644210097" target="_blank">💬 WhatsApp</a></li><li><a href="#contacto">📍 C/ Algezares 74, Beniaján</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Clínica Dental La Fuensanta · Todos los derechos reservados</span>
+      <span style="cursor:pointer;opacity:0.4;font-size:0.75rem;" onclick="showPanel()">⚙ Panel</span>
+    </div>
+  </div>
+</footer>
+</div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<a href="https://wa.me/34644210097?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita" target="_blank" id="wa-float" title="WhatsApp">💬</a>
+<button id="chat-bubble" onclick="toggleChat()" title="Abrir asistente">🤖</button>
+
+<div id="chatbot" class="hidden">
+  <div class="chat-header"><div class="chat-avatar">🦷</div><div class="chat-header-info"><div class="chat-header-name">Asistente La Fuensanta</div><div class="chat-header-status">🟢 En línea ahora</div></div><button class="chat-close" onclick="toggleChat()">✕</button></div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-quick-btns" id="quick-btns"></div>
+  <div class="chat-input-area"><input type="text" class="chat-input" id="chat-input" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter')sendChatMsg()"><button class="chat-send" onclick="sendChatMsg()">➤</button></div>
+</div>
+
+<div id="cita-modal" class="modal-overlay hidden">
+  <div class="modal">
+    <button class="modal-close" onclick="closeCitaModal()">✕</button>
+    <h3 style="font-family:var(--font-display);color:var(--primary);font-size:1.6rem;margin-bottom:8px;">📅 Pedir Cita</h3>
+    <p style="color:var(--text-light);margin-bottom:24px;font-size:0.9rem;">Rellena el formulario y te llamamos para confirmar tu cita.</p>
+    <div class="form-group"><label class="form-label">Nombre *</label><input type="text" class="form-control" id="m-nombre" placeholder="Tu nombre completo"></div>
+    <div class="form-group"><label class="form-label">Teléfono *</label><input type="tel" class="form-control" id="m-telefono" placeholder="6XX XXX XXX"></div>
+    <div class="form-group"><label class="form-label">Tratamiento</label><select class="form-control" id="m-tratamiento"><option value="">Seleccionar...</option><option>Primera revisión gratuita</option><option>Implantes Dentales</option><option>Ortodoncia</option><option>Blanqueamiento</option><option>Endodoncia</option><option>Limpieza Dental</option><option>Otro</option></select></div>
+    <div class="form-group"><label class="form-label">Fecha preferida</label><input type="date" class="form-control" id="m-fecha"></div>
+    <div id="modal-success" style="background:#e8f8f0;border:1.5px solid var(--green);border-radius:8px;padding:14px;color:var(--green);font-weight:600;display:none;margin-bottom:12px;">✅ ¡Solicitud enviada! Te contactamos pronto.</div>
+    <button class="btn btn-primary btn-lg" onclick="submitModal()" style="width:100%;justify-content:center;margin-top:8px;">Solicitar Cita Gratis 🎁</button>
+  </div>
+</div>
+
+<div id="notif"></div>
+
+<div id="panel-login" class="hidden">
+  <div class="login-card">
+    <div class="login-logo">🦷 La Fuensanta</div>
+    <p class="login-subtitle">Panel de Administración</p>
+    <div class="form-group" style="text-align:left;"><label class="form-label">Usuario</label><input type="text" class="form-control" id="login-user" placeholder="admin"></div>
+    <div class="form-group" style="text-align:left;"><label class="form-label">Contraseña</label><input type="password" class="form-control" id="login-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <button class="btn btn-primary btn-lg" onclick="doLogin()" style="width:100%;justify-content:center;margin-top:8px;">Entrar al Panel</button>
+    <div class="login-err" id="login-err">Usuario o contraseña incorrectos</div>
+    <button onclick="showWebsite()" style="background:none;border:none;color:var(--text-light);font-size:0.85rem;margin-top:20px;cursor:pointer;">← Volver a la web</button>
+  </div>
+</div>
+
+<div id="crm" class="hidden">
+  <div class="crm-sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo">🦷 La <span>Fuensanta</span></div><div class="sidebar-role">Panel de Gestión</div></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">Principal</div>
+      <div class="sidebar-item active" onclick="showCrmPanel('dashboard',this)"><span class="si-icon">📊</span> Dashboard</div>
+      <div class="sidebar-section">Gestión</div>
+      <div class="sidebar-item" onclick="showCrmPanel('citas',this)"><span class="si-icon">📅</span> Citas</div>
+      <div class="sidebar-item" onclick="showCrmPanel('pacientes',this)"><span class="si-icon">👥</span> Pacientes</div>
+      <div class="sidebar-item" onclick="showCrmPanel('presupuestos',this)"><span class="si-icon">💰</span> Presupuestos</div>
+      <div class="sidebar-section">Herramientas</div>
+      <div class="sidebar-item" onclick="showCrmPanel('recordatorios',this)"><span class="si-icon">🔔</span> Recordatorios</div>
+      <div class="sidebar-item" onclick="showCrmPanel('chatbot-editor',this)"><span class="si-icon">🤖</span> Chatbot</div>
+    </nav>
+    <div class="sidebar-bottom"><div class="sidebar-item" onclick="logout()"><span class="si-icon">🚪</span> Cerrar sesión</div></div>
+  </div>
+  <div class="crm-main">
+    <div id="panel-dashboard" class="crm-panel active">
+      <div class="crm-topbar"><h2>Dashboard</h2><button class="btn btn-accent" onclick="showCrmPanel('citas',null)">+ Nueva Cita</button></div>
+      <div class="stat-cards" id="dash-stats"></div>
+      <div class="card"><div class="card-title">Últimas citas recibidas</div><div class="table-wrap"><table><thead><tr><th>Paciente</th><th>Tratamiento</th><th>Fecha</th><th>Estado</th></tr></thead><tbody id="dash-citas-table"></tbody></table></div></div>
+    </div>
+    <div id="panel-citas" class="crm-panel">
+      <div class="crm-topbar"><h2>Citas</h2><button class="btn btn-accent" onclick="toggleForm('nueva-cita-form')">+ Nueva Cita</button></div>
+      <div class="card" id="nueva-cita-form" style="display:none;">
+        <div class="card-title">Nueva Cita</div>
+        <div class="form-row"><div><label class="form-label">Nombre *</label><input type="text" class="crm-input" id="nc-nombre" placeholder="Nombre completo"></div><div><label class="form-label">Teléfono *</label><input type="tel" class="crm-input" id="nc-tel" placeholder="6XX XXX XXX"></div></div>
+        <div class="form-row"><div><label class="form-label">Tratamiento</label><select class="crm-select" id="nc-trat"><option value="">Seleccionar...</option><option>Primera revisión</option><option>Implantes</option><option>Ortodoncia</option><option>Blanqueamiento</option><option>Endodoncia</option><option>Limpieza</option><option>Otro</option></select></div><div><label class="form-label">Fecha y hora</label><input type="datetime-local" class="crm-input" id="nc-fecha"></div></div>
+        <label class="form-label">Notas</label><textarea class="crm-input" id="nc-notas" rows="2" placeholder="Notas adicionales..."></textarea>
+        <button class="btn btn-primary" onclick="saveCita()">Guardar Cita</button>
+      </div>
+      <div class="card"><div class="card-title">Todas las citas<input type="text" class="crm-input" id="citas-search" placeholder="🔍 Buscar..." style="width:200px;margin:0;" oninput="renderCitasTable()"></div><div class="table-wrap"><table><thead><tr><th>Paciente</th><th>Teléfono</th><th>Tratamiento</th><th>Fecha</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="citas-table"></tbody></table></div></div>
+    </div>
+    <div id="panel-pacientes" class="crm-panel">
+      <div class="crm-topbar"><h2>Pacientes</h2><button class="btn btn-accent" onclick="toggleForm('nuevo-paciente-form')">+ Nuevo Paciente</button></div>
+      <div class="card" id="nuevo-paciente-form" style="display:none;">
+        <div class="card-title">Nuevo Paciente</div>
+        <div class="form-row"><div><label class="form-label">Nombre *</label><input type="text" class="crm-input" id="np-nombre" placeholder="Nombre completo"></div><div><label class="form-label">Teléfono *</label><input type="tel" class="crm-input" id="np-tel" placeholder="6XX XXX XXX"></div></div>
+        <div class="form-row"><div><label class="form-label">Email</label><input type="email" class="crm-input" id="np-email" placeholder="email@ejemplo.com"></div><div><label class="form-label">Fecha nacimiento</label><input type="date" class="crm-input" id="np-fnac"></div></div>
+        <label class="form-label">Historial / Notas</label><textarea class="crm-input" id="np-historial" rows="3" placeholder="Alergias, historial de tratamientos..."></textarea>
+        <button class="btn btn-primary" onclick="savePaciente()">Guardar Paciente</button>
+      </div>
+      <div class="card"><div class="card-title">Lista de pacientes<input type="text" class="crm-input" id="pac-search" placeholder="🔍 Buscar..." style="width:200px;margin:0;" oninput="renderPacientesTable()"></div><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Email</th><th>Historial</th><th>Acciones</th></tr></thead><tbody id="pacientes-table"></tbody></table></div></div>
+    </div>
+    <div id="panel-presupuestos" class="crm-panel">
+      <div class="crm-topbar"><h2>Presupuestos</h2></div>
+      <div class="card">
+        <div class="card-title">Calculadora de Presupuesto</div>
+        <label class="form-label">Nombre del paciente</label><input type="text" class="crm-input" id="pres-nombre" placeholder="Nombre del paciente" style="max-width:300px;">
+        <div id="budget-treatments"></div>
+        <div class="budget-total"><div><div style="font-size:1rem;">Total Presupuesto</div><div style="font-size:0.82rem;opacity:0.7;">IVA incluido</div></div><div class="budget-total-num" id="budget-total-num">0 €</div></div>
+        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;"><button class="btn btn-primary" onclick="savePresupuesto()">💾 Guardar</button><button class="btn btn-whatsapp" onclick="sendPresupuestoWA()">💬 Enviar por WhatsApp</button></div>
+      </div>
+      <div class="card" id="presupuestos-card" style="display:none;"><div class="card-title">Presupuestos guardados</div><div id="presupuestos-list"></div></div>
+    </div>
+    <div id="panel-recordatorios" class="crm-panel">
+      <div class="crm-topbar"><h2>Recordatorios</h2></div>
+      <div class="card"><div class="card-title">Plantillas de mensajes</div><div id="reminder-templates"></div><button class="btn btn-primary" onclick="saveReminders()">💾 Guardar cambios</button></div>
+      <div class="card"><div class="card-title">Enviar recordatorio manual</div><label class="form-label">Teléfono del paciente</label><input type="tel" class="crm-input" id="rem-tel" placeholder="+34 6XX XXX XXX" style="max-width:300px;"><label class="form-label">Mensaje</label><textarea class="crm-input" id="rem-msg" rows="4" placeholder="Escribe el mensaje aquí..."></textarea><button class="btn btn-whatsapp" onclick="sendReminderWA()">💬 Enviar por WhatsApp</button></div>
+    </div>
+    <div id="panel-chatbot-editor" class="crm-panel">
+      <div class="crm-topbar"><h2>Editor del Chatbot</h2></div>
+      <div class="card"><div class="card-title">Preguntas y respuestas</div><p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:20px;">Edita las respuestas del chatbot que aparece en la web pública.</p><div id="qa-list"></div><button class="btn btn-primary" onclick="saveChatbotQA()">💾 Guardar cambios</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const CONFIG = { clinicName:'Clínica Dental La Fuensanta', phone:'968837316', waNumber:'34644210097', admin:{user:'admin',pass:'fuensanta2024'} };
+const ls = { get:k=>{try{return JSON.parse(localStorage.getItem(k))||[];}catch{return[];}}, set:(k,v)=>localStorage.setItem(k,JSON.stringify(v)) };
+const DEFAULT_QA = [
+  {q:'¿Cuáles son vuestros precios?',a:'Los precios varían según el tratamiento. La primera revisión es GRATIS. Implantes desde 750€, ortodoncia desde 1.200€, blanqueamiento desde 180€, limpieza desde 60€. Pide cita y te hacemos un presupuesto sin compromiso.'},
+  {q:'¿Qué tratamientos realizáis?',a:'Realizamos implantes dentales, ortodoncia (brackets e Invisalign), blanqueamiento, endodoncia, limpiezas, odontopediatría y mucho más. ¡Somos tu clínica integral!'},
+  {q:'¿Cuál es vuestro horario?',a:'Estamos abiertos de lunes a viernes de 9:00 a 14:00 y de 16:00 a 20:00. Los sábados de 9:00 a 13:00. ¡Llámanos o escríbenos!'},
+  {q:'¿Dónde estáis?',a:'Estamos en C/ Algezares 74, 30570 – Beniaján (Murcia). Muy cerca del centro de Beniaján, con parking gratuito en la zona.'},
+  {q:'¿Aceptáis seguros dentales?',a:'Sí, trabajamos con los principales seguros dentales. Consulta con nosotros. También ofrecemos financiación sin intereses.'}
+];
+const DEFAULT_REMINDERS = [
+  {name:'Recordatorio de cita',template:'Hola {nombre} 👋 Te recordamos que tienes una cita en Clínica Dental La Fuensanta el día {fecha} a las {hora}. Si necesitas cambiarla llámanos al 968 83 73 16. ¡Te esperamos! 🦷'},
+  {name:'Confirmación de cita',template:'Hola {nombre} ✅ Tu cita en Clínica Dental La Fuensanta ha sido CONFIRMADA para el {fecha} a las {hora}. Recuerda traer tu DNI. ¡Hasta pronto! 😊'},
+  {name:'Seguimiento post-tratamiento',template:'Hola {nombre} 🙏 Esperamos que te hayas recuperado bien de tu tratamiento. Si tienes alguna molestia no dudes en contactarnos. ¡Cuídate! - Clínica Dental La Fuensanta'}
+];
+const BUDGET_TREATMENTS = [
+  {name:'Implante dental (unitario)',price:750},{name:'Corona sobre implante',price:450},
+  {name:'Ortodoncia completa',price:1500},{name:'Ortodoncia invisible (Invisalign)',price:2200},
+  {name:'Blanqueamiento en clínica',price:280},{name:'Blanqueamiento con férulas',price:180},
+  {name:'Endodoncia (unirradicular)',price:250},{name:'Endodoncia (multirradicular)',price:380},
+  {name:'Limpieza dental profesional',price:60},{name:'Empaste (composite)',price:85},
+  {name:'Extracción simple',price:60},{name:'Extracción cordal',price:180}
+];
+window.addEventListener('DOMContentLoaded',()=>{
+  initScrollReveal(); renderBudgetTreatments(); renderReminderTemplates(); renderQAEditor(); renderDashboard();
+  document.querySelectorAll('input[type="date"]').forEach(i=>i.min=new Date().toISOString().split('T')[0]);
+});
+function initScrollReveal(){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));}
+function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');document.getElementById('nav-cta').classList.toggle('open');}
+function showPanel(){document.getElementById('website').classList.add('hidden');document.getElementById('crm').classList.add('hidden');document.getElementById('panel-login').classList.remove('hidden');}
+function showWebsite(){document.getElementById('panel-login').classList.add('hidden');document.getElementById('crm').classList.add('hidden');document.getElementById('website').classList.remove('hidden');}
+function doLogin(){const u=document.getElementById('login-user').value.trim();const p=document.getElementById('login-pass').value.trim();if(u===CONFIG.admin.user&&p===CONFIG.admin.pass){document.getElementById('panel-login').classList.add('hidden');document.getElementById('crm').classList.remove('hidden');renderDashboard();showNotif('✅ Bienvenido al panel de gestión','success');}else{const e=document.getElementById('login-err');e.style.display='block';setTimeout(()=>e.style.display='none',3000);}}
+function logout(){document.getElementById('crm').classList.add('hidden');document.getElementById('website').classList.remove('hidden');}
+function showCrmPanel(name,el){document.querySelectorAll('.crm-panel').forEach(p=>p.classList.remove('active'));document.getElementById('panel-'+name).classList.add('active');document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));if(el)el.classList.add('active');if(name==='citas')renderCitasTable();if(name==='pacientes')renderPacientesTable();if(name==='presupuestos')renderPresupuestosList();if(name==='dashboard')renderDashboard();if(name==='chatbot-editor')renderQAEditor();if(name==='recordatorios')renderReminderTemplates();}
+function toggleForm(id){const f=document.getElementById(id);f.style.display=f.style.display==='none'?'block':'none';}
+function showNotif(msg,type='info'){const c=document.getElementById('notif');const d=document.createElement('div');d.className='notif-item '+type;d.textContent=msg;c.appendChild(d);setTimeout(()=>d.remove(),3500);}
+function openCitaModal(){document.getElementById('cita-modal').classList.remove('hidden');document.body.style.overflow='hidden';}
+function closeCitaModal(){document.getElementById('cita-modal').classList.add('hidden');document.body.style.overflow='';}
+document.getElementById('cita-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeCitaModal();});
+function submitModal(){const nombre=document.getElementById('m-nombre').value.trim();const tel=document.getElementById('m-telefono').value.trim();if(!nombre||!tel){showNotif('⚠️ Por favor rellena nombre y teléfono','error');return;}saveLead({nombre,telefono:tel,tratamiento:document.getElementById('m-tratamiento').value,fecha:document.getElementById('m-fecha').value,origen:'modal'});document.getElementById('modal-success').style.display='block';showNotif('✅ Cita solicitada correctamente','success');setTimeout(closeCitaModal,3000);}
+function submitForm(){const nombre=document.getElementById('f-nombre').value.trim();const tel=document.getElementById('f-telefono').value.trim();let valid=true;const setErr=(id,e)=>{document.getElementById(id).classList[e?'add':'remove']('error');if(e)valid=false;};setErr('f-nombre',!nombre);setErr('f-telefono',!tel||!/^\d{9,}$/.test(tel.replace(/\s/g,'')));if(!valid)return;saveLead({nombre,telefono:tel,tratamiento:document.getElementById('f-tratamiento').value,fecha:document.getElementById('f-fecha').value,mensaje:document.getElementById('f-mensaje').value,origen:'formulario'});document.getElementById('form-success').style.display='block';showNotif('✅ Solicitud de cita enviada','success');setTimeout(()=>document.getElementById('form-success').style.display='none',5000);}
+function saveLead(data){const leads=ls.get('leads');const id=Date.now().toString();leads.push({id,...data,estado:'pendiente',timestamp:new Date().toISOString()});ls.set('leads',leads);const pacs=ls.get('pacientes');if(!pacs.find(p=>p.telefono===data.telefono)){pacs.push({id:'p'+id,nombre:data.nombre,telefono:data.telefono,email:'',fnac:'',historial:data.tratamiento||'',timestamp:new Date().toISOString()});ls.set('pacientes',pacs);}}
+function saveCita(){const nombre=document.getElementById('nc-nombre').value.trim();const tel=document.getElementById('nc-tel').value.trim();if(!nombre||!tel){showNotif('⚠️ Nombre y teléfono son obligatorios','error');return;}const leads=ls.get('leads');leads.push({id:Date.now().toString(),nombre,telefono:tel,tratamiento:document.getElementById('nc-trat').value,fecha:document.getElementById('nc-fecha').value,notas:document.getElementById('nc-notas').value,estado:'pendiente',origen:'panel',timestamp:new Date().toISOString()});ls.set('leads',leads);const pacs=ls.get('pacientes');if(!pacs.find(p=>p.telefono===tel)){pacs.push({id:'p'+Date.now(),nombre,telefono:tel,email:'',fnac:'',historial:'',timestamp:new Date().toISOString()});ls.set('pacientes',pacs);}showNotif('✅ Cita creada correctamente','success');document.getElementById('nueva-cita-form').style.display='none';['nc-nombre','nc-tel','nc-notas'].forEach(id=>document.getElementById(id).value='');renderCitasTable();renderDashboard();}
+function renderCitasTable(){const leads=ls.get('leads');const q=(document.getElementById('citas-search')?.value||'').toLowerCase();const filtered=leads.filter(l=>!q||(l.nombre||'').toLowerCase().includes(q)||(l.telefono||'').includes(q)||(l.tratamiento||'').toLowerCase().includes(q));const tb=document.getElementById('citas-table');if(!tb)return;if(!filtered.length){tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--text-light);padding:32px;">No hay citas registradas. Los formularios de la web aparecerán aquí automáticamente.</td></tr>';return;}tb.innerHTML=filtered.slice().reverse().map(c=>`<tr><td><strong>${c.nombre||'-'}</strong></td><td>${c.telefono||'-'}</td><td>${c.tratamiento||'-'}</td><td>${c.fecha?fmtDate(c.fecha):'-'}</td><td><select class="action-btn" onchange="updateCitaStatus('${c.id}',this.value)" style="cursor:pointer;"><option value="pendiente" ${c.estado==='pendiente'?'selected':''}>⏳ Pendiente</option><option value="confirmada" ${c.estado==='confirmada'?'selected':''}>✅ Confirmada</option><option value="cancelada" ${c.estado==='cancelada'?'selected':''}>❌ Cancelada</option></select></td><td style="display:flex;gap:6px;flex-wrap:wrap;"><button class="action-btn wa" onclick="sendWA('${c.telefono}','Hola ${c.nombre}, le contactamos desde Clínica Dental La Fuensanta.')">💬 WA</button><button class="action-btn danger" onclick="deleteCita('${c.id}')">🗑</button></td></tr>`).join('');}
+function updateCitaStatus(id,status){const leads=ls.get('leads');const i=leads.findIndex(l=>l.id===id);if(i>-1){leads[i].estado=status;ls.set('leads',leads);renderDashboard();showNotif('Estado actualizado','success');}}
+function deleteCita(id){if(!confirm('¿Eliminar esta cita?'))return;ls.set('leads',ls.get('leads').filter(l=>l.id!==id));showNotif('Cita eliminada','info');renderCitasTable();renderDashboard();}
+function fmtDate(d){if(!d)return'-';try{return new Date(d).toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});}catch{return d;}}
+function savePaciente(){const nombre=document.getElementById('np-nombre').value.trim();const tel=document.getElementById('np-tel').value.trim();if(!nombre||!tel){showNotif('⚠️ Nombre y teléfono son obligatorios','error');return;}const pacs=ls.get('pacientes');pacs.push({id:'p'+Date.now(),nombre,telefono:tel,email:document.getElementById('np-email').value.trim(),fnac:document.getElementById('np-fnac').value,historial:document.getElementById('np-historial').value,timestamp:new Date().toISOString()});ls.set('pacientes',pacs);showNotif('✅ Paciente guardado','success');document.getElementById('nuevo-paciente-form').style.display='none';['np-nombre','np-tel','np-email','np-historial'].forEach(id=>document.getElementById(id).value='');renderPacientesTable();renderDashboard();}
+function renderPacientesTable(){const pacs=ls.get('pacientes');const q=(document.getElementById('pac-search')?.value||'').toLowerCase();const filtered=pacs.filter(p=>!q||(p.nombre||'').toLowerCase().includes(q)||(p.telefono||'').includes(q));const tb=document.getElementById('pacientes-table');if(!tb)return;if(!filtered.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:32px;">No hay pacientes. Se añaden automáticamente cuando llega un formulario.</td></tr>';return;}tb.innerHTML=filtered.slice().reverse().map(p=>`<tr><td><strong>${p.nombre||'-'}</strong></td><td>${p.telefono||'-'}</td><td>${p.email||'-'}</td><td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${p.historial||''}">${p.historial||'-'}</td><td style="display:flex;gap:6px;"><button class="action-btn wa" onclick="sendWA('${p.telefono}','Hola ${p.nombre}, le contactamos desde Clínica Dental La Fuensanta.')">💬 WA</button><button class="action-btn danger" onclick="deletePaciente('${p.id}')">🗑</button></td></tr>`).join('');}
+function deletePaciente(id){if(!confirm('¿Eliminar paciente?'))return;ls.set('pacientes',ls.get('pacientes').filter(p=>p.id!==id));showNotif('Paciente eliminado','info');renderPacientesTable();renderDashboard();}
+function renderBudgetTreatments(){const c=document.getElementById('budget-treatments');if(!c)return;c.innerHTML=BUDGET_TREATMENTS.map((t,i)=>`<div class="budget-item"><div><div style="font-weight:600;font-size:0.95rem;">${t.name}</div><div style="color:var(--text-light);font-size:0.85rem;">${t.price}€ / unidad</div></div><div style="display:flex;align-items:center;gap:12px;"><input type="number" min="0" max="20" value="0" class="crm-input" style="width:70px;margin:0;text-align:center;" id="bt-${i}" oninput="calcTotal()"><span style="color:var(--primary-light);font-weight:700;min-width:60px;text-align:right;" id="bt-sub-${i}">0€</span></div></div>`).join('');}
+function calcTotal(){let total=0;BUDGET_TREATMENTS.forEach((t,i)=>{const qty=parseInt(document.getElementById('bt-'+i)?.value||'0')||0;const sub=qty*t.price;const el=document.getElementById('bt-sub-'+i);if(el)el.textContent=sub+'€';total+=sub;});document.getElementById('budget-total-num').textContent=total.toLocaleString('es-ES')+'€';}
+function savePresupuesto(){const nombre=document.getElementById('pres-nombre').value.trim();const items=[];let total=0;BUDGET_TREATMENTS.forEach((t,i)=>{const qty=parseInt(document.getElementById('bt-'+i)?.value||'0')||0;if(qty>0){items.push({name:t.name,qty,price:t.price,sub:qty*t.price});total+=qty*t.price;}});if(!items.length){showNotif('⚠️ Añade al menos un tratamiento','error');return;}const pres=ls.get('presupuestos');pres.push({id:Date.now().toString(),nombre:nombre||'Sin nombre',items,total,fecha:new Date().toLocaleDateString('es-ES'),timestamp:new Date().toISOString()});ls.set('presupuestos',pres);showNotif('✅ Presupuesto guardado','success');renderPresupuestosList();}
+function sendPresupuestoWA(){const nombre=document.getElementById('pres-nombre').value.trim();const items=[];let total=0;BUDGET_TREATMENTS.forEach((t,i)=>{const qty=parseInt(document.getElementById('bt-'+i)?.value||'0')||0;if(qty>0){items.push(`  - ${t.name} x${qty}: ${qty*t.price}€`);total+=qty*t.price;}});if(!items.length){showNotif('⚠️ Añade tratamientos primero','error');return;}const msg=`Hola ${nombre||'paciente'} 👋\n\nPresupuesto de *Clínica Dental La Fuensanta*:\n\n${items.join('\n')}\n\n*TOTAL: ${total}€*\n\nLlámanos al 968 83 73 16 para confirmar. ¡Muchas gracias! 🦷`;window.open(`https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`,'_blank');}
+function renderPresupuestosList(){const pres=ls.get('presupuestos');const card=document.getElementById('presupuestos-card');const c=document.getElementById('presupuestos-list');if(!c||!card)return;if(!pres.length){card.style.display='none';return;}card.style.display='block';c.innerHTML=pres.slice().reverse().map(p=>`<div style="border:1.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:14px;"><div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;"><div><div style="font-weight:700;">${p.nombre}</div><div style="font-size:0.82rem;color:var(--text-light);">${p.fecha}</div></div><div style="font-family:var(--font-display);font-size:1.5rem;color:var(--primary);">${p.total.toLocaleString('es-ES')}€</div></div><div style="margin-top:10px;font-size:0.85rem;color:var(--text-mid);">${p.items.map(i=>`${i.name} ×${i.qty}`).join(' · ')}</div></div>`).join('');}
+function renderReminderTemplates(){const saved=ls.get('reminders');const data=saved.length?saved:DEFAULT_REMINDERS;const c=document.getElementById('reminder-templates');if(!c)return;c.innerHTML=data.map((r,i)=>`<div class="reminder-template"><div style="font-weight:700;color:var(--primary);margin-bottom:10px;">${r.name}</div><p style="font-size:0.8rem;color:var(--text-light);margin-bottom:8px;">Variables: {nombre}, {fecha}, {hora}</p><textarea class="crm-input" id="rem-tmpl-${i}" rows="4">${r.template}</textarea><button class="action-btn wa" onclick="useTemplate(${i})" style="margin-top:8px;">Usar esta plantilla</button></div>`).join('');}
+function saveReminders(){const saved=ls.get('reminders');const base=saved.length?saved:DEFAULT_REMINDERS;const updated=base.map((r,i)=>({...r,template:document.getElementById('rem-tmpl-'+i)?.value||r.template}));ls.set('reminders',updated);showNotif('✅ Plantillas guardadas','success');}
+function useTemplate(i){const saved=ls.get('reminders');const data=saved.length?saved:DEFAULT_REMINDERS;document.getElementById('rem-msg').value=data[i].template;}
+function sendReminderWA(){const tel=document.getElementById('rem-tel').value.replace(/\s/g,'');const msg=document.getElementById('rem-msg').value;if(!tel||!msg){showNotif('⚠️ Introduce teléfono y mensaje','error');return;}const num=tel.startsWith('+')?tel.replace('+',''):'34'+tel;window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`,'_blank');}
+function renderQAEditor(){const saved=ls.get('chatbot_qa');const data=saved.length?saved:DEFAULT_QA;const c=document.getElementById('qa-list');if(!c)return;c.innerHTML=data.map((qa,i)=>`<div class="qa-item"><div class="qa-question">❓ ${qa.q}</div><textarea class="crm-input" id="qa-ans-${i}" rows="3">${qa.a}</textarea></div>`).join('');}
+function saveChatbotQA(){const saved=ls.get('chatbot_qa');const base=saved.length?saved:DEFAULT_QA;const updated=base.map((qa,i)=>({q:qa.q,a:document.getElementById('qa-ans-'+i)?.value||qa.a}));ls.set('chatbot_qa',updated);showNotif('✅ Chatbot actualizado','success');}
+let chatOpen=false,chatGreeted=false;
+function toggleChat(){chatOpen=!chatOpen;const cb=document.getElementById('chatbot');if(chatOpen){cb.classList.remove('hidden');if(!chatGreeted){chatGreeted=true;setTimeout(()=>addBotMsg('¡Hola! 👋 Soy el asistente de <strong>Clínica Dental La Fuensanta</strong>. ¿En qué puedo ayudarte hoy?'),400);setTimeout(renderQuickBtns,900);}}else{cb.classList.add('hidden');}}
+function addBotMsg(html){const mc=document.getElementById('chat-messages');const d=document.createElement('div');d.className='chat-msg bot';d.innerHTML=html;mc.appendChild(d);mc.scrollTop=mc.scrollHeight;}
+function addUserMsg(text){const mc=document.getElementById('chat-messages');const d=document.createElement('div');d.className='chat-msg user';d.textContent=text;mc.appendChild(d);mc.scrollTop=mc.scrollHeight;}
+function renderQuickBtns(){const qb=document.getElementById('quick-btns');const qa=ls.get('chatbot_qa').length?ls.get('chatbot_qa'):DEFAULT_QA;qb.innerHTML=qa.map((item,i)=>`<button class="quick-btn" onclick="handleQuick(${i})">${item.q}</button>`).join('');qb.innerHTML+=`<button class="quick-btn" style="background:var(--whatsapp);color:white;border-color:var(--whatsapp);" onclick="window.open('https://wa.me/${CONFIG.waNumber}?text=Hola%2C%20quiero%20pedir%20cita','_blank')">💬 Ir al WhatsApp</button>`;qb.innerHTML+=`<button class="quick-btn" style="background:var(--primary);color:white;border-color:var(--primary);" onclick="openCitaModal();toggleChat()">📅 Pedir Cita</button>`;}
+function handleQuick(i){const qa=ls.get('chatbot_qa').length?ls.get('chatbot_qa'):DEFAULT_QA;addUserMsg(qa[i].q);document.getElementById('quick-btns').innerHTML='';showTyping(1000,()=>{addBotMsg(qa[i].a);setTimeout(renderQuickBtns,600);});}
+funct
