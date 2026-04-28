@@ -65,6 +65,7 @@ button,input,select,textarea{font-family:var(--font-body);}
 .animate-delay-2{animation-delay:0.2s;opacity:0;}
 .animate-delay-3{animation-delay:0.3s;opacity:0;}
 .animate-delay-4{animation-delay:0.4s;opacity:0;}
+/* NAVBAR */
 #navbar{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,74,110,0.08);transition:var(--transition);}
 #navbar .container{display:flex;align-items:center;justify-content:space-between;height:70px;}
 .nav-logo{font-family:var(--font-display);font-size:1.3rem;color:var(--primary);font-weight:700;}
@@ -78,11 +79,12 @@ button,input,select,textarea{font-family:var(--font-body);}
 @media(max-width:768px){
   .nav-links,.nav-cta{display:none;}
   .nav-hamburger{display:flex;}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:white;padding:20px;box-shadow:var(--shadow-lg);gap:16px;}
-  .nav-cta.open{display:flex;flex-direction:column;padding:0 20px 20px;background:white;}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:white;padding:20px;box-shadow:var(--shadow-lg);gap:16px;z-index:999;}
+  .nav-cta.open{display:flex;flex-direction:column;padding:0 20px 20px;background:white;position:absolute;top:190px;left:0;right:0;z-index:998;}
 }
+/* HERO */
 #hero{min-height:100vh;background:linear-gradient(135deg,#0d2e47 0%,#1a4a6e 50%,#1e5b8a 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding-top:70px;}
-#hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80');background-size:cover;background-position:center;opacity:0.12;}
 .hero-blob{position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:600px;height:600px;border-radius:60% 40% 70% 30% / 50% 60% 40% 70%;background:rgba(232,184,75,0.08);animation:float 8s ease-in-out infinite;}
 .hero-content{position:relative;z-index:2;max-width:680px;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,184,75,0.15);border:1px solid rgba(232,184,75,0.4);color:var(--accent);padding:8px 18px;border-radius:30px;font-size:0.85rem;font-weight:600;margin-bottom:24px;}
@@ -94,18 +96,23 @@ button,input,select,textarea{font-family:var(--font-body);}
 .hero-stats{display:flex;gap:36px;flex-wrap:wrap;}
 .hero-stat-num{font-family:var(--font-display);font-size:2rem;color:var(--accent);font-weight:700;}
 .hero-stat-label{font-size:0.85rem;color:rgba(255,255,255,0.6);}
+/* TRUST BAR */
 .trust-bar{background:var(--off-white);padding:20px 0;border-bottom:1px solid var(--border);}
 .trust-bar-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
 .trust-item{display:flex;align-items:center;gap:10px;color:var(--text-mid);font-size:0.9rem;font-weight:500;}
+/* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
-.service-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:32px;transition:var(--transition);cursor:pointer;position:relative;overflow:hidden;}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:var(--transition);}
+.service-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--transition);cursor:pointer;position:relative;}
 .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.service-card-img{width:100%;height:200px;object-fit:cover;display:block;}
+.service-card-img-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,var(--off-white),#e8eef5);}
+.service-card-body{padding:24px;}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:var(--transition);}
 .service-card:hover::before{transform:scaleX(1);}
-.service-icon{font-size:2.8rem;margin-bottom:16px;}
-.service-title{font-family:var(--font-display);font-size:1.4rem;color:var(--primary);margin-bottom:10px;}
+.service-title{font-family:var(--font-display);font-size:1.3rem;color:var(--primary);margin-bottom:10px;}
 .service-desc{color:var(--text-mid);line-height:1.6;font-size:0.95rem;margin-bottom:16px;}
 .service-price{font-weight:700;color:var(--primary-light);font-size:1rem;}
+/* OFFER */
 #oferta{background:linear-gradient(135deg,var(--primary) 0%,#0d2e47 100%);position:relative;overflow:hidden;}
 .offer-content{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 .offer-badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:800;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;padding:8px 20px;border-radius:30px;margin-bottom:24px;}
@@ -115,6 +122,21 @@ button,input,select,textarea{font-family:var(--font-body);}
 .offer-features{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:36px;}
 .offer-feature{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.9);font-size:0.95rem;}
 .offer-feature::before{content:'✓';color:var(--accent);font-weight:700;}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
+.about-img-wrap{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);}
+.about-img-wrap img{width:100%;height:420px;object-fit:cover;display:block;}
+.about-img-badge{position:absolute;bottom:24px;left:24px;background:white;border-radius:12px;padding:16px 20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;}
+.about-img-badge-stars{font-size:1.3rem;color:var(--accent);}
+.about-img-badge-text{font-size:0.85rem;color:var(--text-mid);}
+.about-img-badge-score{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--primary);}
+.about-features{display:flex;flex-direction:column;gap:20px;}
+.about-feature{display:flex;align-items:flex-start;gap:14px;}
+.about-feature-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.about-feature-text h4{font-weight:700;color:var(--text-dark);margin-bottom:4px;}
+.about-feature-text p{font-size:0.9rem;color:var(--text-mid);line-height:1.5;}
+/* TESTIMONIALS */
 #testimonios{background:var(--off-white);}
 .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
 .testimonial-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);position:relative;}
@@ -122,9 +144,11 @@ button,input,select,textarea{font-family:var(--font-body);}
 .testimonial-stars{color:var(--accent);font-size:1.1rem;margin-bottom:14px;letter-spacing:2px;}
 .testimonial-text{color:var(--text-mid);line-height:1.7;font-size:0.97rem;margin-bottom:20px;font-style:italic;}
 .testimonial-author{display:flex;align-items:center;gap:12px;}
-.testimonial-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1rem;}
+.testimonial-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.testimonial-avatar-placeholder{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1rem;flex-shrink:0;}
 .testimonial-name{font-weight:600;color:var(--text-dark);}
 .testimonial-meta{font-size:0.82rem;color:var(--text-light);}
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 @media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
 .contact-item{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);}
@@ -134,6 +158,10 @@ button,input,select,textarea{font-family:var(--font-body);}
 .contact-item-value{font-weight:600;color:var(--text-dark);font-size:1rem;}
 .contact-item-value a{color:var(--primary-light);}
 .contact-buttons{display:flex;flex-direction:column;gap:12px;margin-top:28px;}
+/* MAP */
+.map-wrap{border-radius:var(--radius);overflow:hidden;height:260px;margin-top:28px;box-shadow:var(--shadow);}
+.map-wrap iframe{width:100%;height:100%;border:none;}
+/* FORM */
 #cita-form{background:var(--off-white);border-radius:var(--radius);padding:36px;}
 .form-group{margin-bottom:18px;}
 .form-label{display:block;font-weight:600;font-size:0.88rem;color:var(--text-dark);margin-bottom:6px;}
@@ -143,6 +171,7 @@ button,input,select,textarea{font-family:var(--font-body);}
 .form-error{font-size:0.82rem;color:var(--red);margin-top:4px;display:none;}
 .form-control.error+.form-error{display:block;}
 .form-success{background:#e8f8f0;border:1.5px solid var(--green);border-radius:var(--radius-sm);padding:16px;color:var(--green);font-weight:600;display:none;}
+/* FOOTER */
 footer{background:var(--text-dark);color:rgba(255,255,255,0.7);padding:40px 0 20px;}
 .footer-inner{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;margin-bottom:32px;}
 .footer-desc{font-size:0.9rem;line-height:1.6;max-width:260px;margin-top:10px;}
@@ -151,18 +180,20 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.7);padding:40px 0 20
 .footer-links li a{font-size:0.9rem;transition:var(--transition);}
 .footer-links li a:hover{color:var(--accent);}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:0.84rem;}
-#wa-float{position:fixed;bottom:24px;right:24px;z-index:800;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:white;font-size:1.8rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);cursor:pointer;animation:pulse 2.5s ease-in-out infinite;border:none;transition:transform 0.2s;}
+/* FLOATING */
+#wa-float{position:fixed;bottom:24px;right:24px;z-index:800;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:white;font-size:1.8rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);cursor:pointer;animation:pulse 2.5s ease-in-out infinite;border:none;text-decoration:none;transition:transform 0.2s;}
 #wa-float:hover{transform:scale(1.1);}
 #chat-bubble{position:fixed;bottom:94px;right:24px;z-index:800;width:56px;height:56px;border-radius:50%;background:var(--primary);color:white;font-size:1.6rem;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);cursor:pointer;border:none;transition:var(--transition);}
 #chat-bubble:hover{background:var(--primary-light);transform:scale(1.08);}
+/* CHATBOT */
 #chatbot{position:fixed;bottom:160px;right:24px;z-index:800;width:360px;max-height:520px;background:var(--white);border-radius:20px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden;animation:bounceIn 0.4s ease;}
-@media(max-width:400px){#chatbot{width:calc(100vw - 20px);right:10px;}}
+@media(max-width:420px){#chatbot{width:calc(100vw - 20px);right:10px;}}
 .chat-header{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:white;padding:16px 20px;display:flex;align-items:center;gap:12px;}
 .chat-avatar{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
 .chat-header-info{flex:1;}
 .chat-header-name{font-weight:700;font-size:1rem;}
 .chat-header-status{font-size:0.78rem;opacity:0.8;}
-.chat-close{background:none;border:none;color:white;font-size:1.4rem;cursor:pointer;line-height:1;}
+.chat-close{background:none;border:none;color:white;font-size:1.4rem;cursor:pointer;line-height:1;padding:0 4px;}
 .chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:300px;}
 .chat-msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:0.9rem;line-height:1.5;animation:fadeInUp 0.3s ease;}
 .chat-msg.bot{background:var(--off-white);color:var(--text-dark);border-bottom-left-radius:4px;align-self:flex-start;}
@@ -178,14 +209,17 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.7);padding:40px 0 20
 .chat-typing span{width:7px;height:7px;border-radius:50%;background:var(--text-light);animation:bounce 1.2s infinite;}
 .chat-typing span:nth-child(2){animation-delay:0.2s;}
 .chat-typing span:nth-child(3){animation-delay:0.4s;}
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.2s ease;}
 .modal{background:var(--white);border-radius:20px;padding:36px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;animation:fadeInUp 0.3s ease;position:relative;}
 .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-light);}
+/* PANEL LOGIN */
 #panel-login{min-height:100vh;background:linear-gradient(135deg,#0d2e47,#1a4a6e);display:flex;align-items:center;justify-content:center;padding:20px;}
 .login-card{background:white;border-radius:20px;padding:48px 40px;max-width:420px;width:100%;box-shadow:var(--shadow-lg);text-align:center;}
 .login-logo{font-family:var(--font-display);font-size:1.6rem;color:var(--primary);margin-bottom:8px;}
 .login-subtitle{color:var(--text-light);margin-bottom:32px;font-size:0.9rem;}
 .login-err{background:#fef2f2;color:var(--red);padding:12px;border-radius:8px;font-size:0.9rem;margin-top:12px;display:none;}
+/* CRM */
 #crm{min-height:100vh;background:#f0f4f8;display:flex;}
 .crm-sidebar{width:260px;background:linear-gradient(180deg,#0d2e47 0%,#1a4a6e 100%);flex-shrink:0;display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:100;overflow-y:auto;}
 .sidebar-header{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.08);}
@@ -201,7 +235,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.7);padding:40px 0 20
 .sidebar-bottom{padding:16px;border-top:1px solid rgba(255,255,255,0.08);}
 .crm-main{margin-left:260px;flex:1;padding:32px;min-height:100vh;}
 @media(max-width:900px){
-  .crm-sidebar{width:100%;position:relative;flex-direction:column;}
+  .crm-sidebar{width:100%;position:relative;}
   .crm-main{margin-left:0;padding:20px;}
 }
 .crm-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:16px;}
@@ -239,19 +273,11 @@ tr:hover td{background:var(--off-white);}
 .crm-select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:0.92rem;margin-bottom:10px;background:white;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
-#notif{position:fixed;top:20px;right:20px;z-index:2000;display:flex;flex-direction:column;gap:10px;}
-.notif-item{background:white;border-radius:12px;padding:14px 20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;font-size:0.92rem;font-weight:600;min-width:260px;animation:slideInRight 0.3s ease;}
+#notif{position:fixed;top:20px;right:20px;z-index:2000;display:flex;flex-direction:column;gap:10px;pointer-events:none;}
+.notif-item{background:white;border-radius:12px;padding:14px 20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;font-size:0.92rem;font-weight:600;min-width:260px;animation:slideInRight 0.3s ease;pointer-events:all;}
 .notif-item.success{border-left:4px solid var(--green);}
 .notif-item.error{border-left:4px solid var(--red);}
 .notif-item.info{border-left:4px solid var(--primary);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
-.about-image{background:linear-gradient(135deg,var(--primary) 0%,#1e5b8a 100%);border-radius:var(--radius);padding:48px;text-align:center;color:white;}
-.about-features{display:flex;flex-direction:column;gap:20px;}
-.about-feature{display:flex;align-items:flex-start;gap:14px;}
-.about-feature-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-.about-feature-text h4{font-weight:700;color:var(--text-dark);margin-bottom:4px;}
-.about-feature-text p{font-size:0.9rem;color:var(--text-mid);line-height:1.5;}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:none;}
 @media(max-width:480px){
@@ -263,15 +289,18 @@ tr:hover td{background:var(--off-white);}
 </style>
 </head>
 <body>
+
 <div id="website">
+
+<!-- NAVBAR -->
 <nav id="navbar">
   <div class="container">
     <a class="nav-logo" href="#hero">🦷 La <span>Fuensanta</span></a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#testimonios">Opiniones</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
+      <li><a href="#nosotros" onclick="closeMenu()">Nosotros</a></li>
+      <li><a href="#testimonios" onclick="closeMenu()">Opiniones</a></li>
+      <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
     </ul>
     <div class="nav-cta" id="nav-cta">
       <a href="tel:968837316" class="btn btn-primary" style="padding:10px 18px;font-size:0.9rem;">📞 Llamar</a>
@@ -280,7 +309,10 @@ tr:hover td{background:var(--off-white);}
     <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- HERO -->
 <section id="hero">
+  <div class="hero-bg-img"></div>
   <div class="hero-blob"></div>
   <div class="container">
     <div class="hero-content">
@@ -301,6 +333,8 @@ tr:hover td{background:var(--off-white);}
     </div>
   </div>
 </section>
+
+<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner container">
     <div class="trust-item">✅ Colegiados y certificados</div>
@@ -310,22 +344,46 @@ tr:hover td{background:var(--off-white);}
     <div class="trust-item">😌 Sedación consciente</div>
   </div>
 </div>
+
+<!-- SERVICES -->
 <section id="servicios" class="section">
   <div class="container text-center">
     <div class="badge reveal">Nuestros Tratamientos</div>
     <h2 class="section-title reveal">Todo lo que necesita tu sonrisa</h2>
     <p class="section-subtitle reveal">Tratamientos completos con la mejor tecnología y los mejores profesionales de Murcia</p>
     <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon">🦷</div><div class="service-title">Implantes Dentales</div><div class="service-desc">Recupera tu sonrisa para siempre con implantes de titanio de última generación. Resultado natural y duradero garantizado.</div><div class="service-price">Desde 750€ · Financiación disponible</div></div>
-      <div class="service-card reveal"><div class="service-icon">😁</div><div class="service-title">Ortodoncia</div><div class="service-desc">Brackets metálicos, estéticos o alineadores invisibles. Dientes perfectamente alineados para todas las edades.</div><div class="service-price">Desde 1.200€ · Consulta inicial gratis</div></div>
-      <div class="service-card reveal"><div class="service-icon">✨</div><div class="service-title">Blanqueamiento</div><div class="service-desc">Blanqueamiento profesional en clínica o con férulas personalizadas para casa. Resultados visibles desde la primera sesión.</div><div class="service-price">Desde 180€</div></div>
-      <div class="service-card reveal"><div class="service-icon">🔬</div><div class="service-title">Endodoncia</div><div class="service-desc">Salvamos tu diente natural eliminando la infección con técnica rotacional y sin dolor. Rapidez y precisión garantizadas.</div><div class="service-price">Desde 250€</div></div>
-      <div class="service-card reveal"><div class="service-icon">🧹</div><div class="service-title">Limpieza Dental</div><div class="service-desc">Higiene profesional con ultrasonidos para eliminar sarro y manchas. Incluye revisión y diagnóstico completo.</div><div class="service-price">Desde 60€</div></div>
-      <div class="service-card reveal"><div class="service-icon">👶</div><div class="service-title">Odontopediatría</div><div class="service-desc">Cuidamos la salud bucodental de los más pequeños en un ambiente tranquilo y de confianza.</div><div class="service-price">Desde 35€</div></div>
+      <div class="service-card reveal">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Implantes Dentales" loading="lazy">
+        <div class="service-card-body"><div class="service-title">🦷 Implantes Dentales</div><div class="service-desc">Recupera tu sonrisa para siempre con implantes de titanio de última generación. Resultado natural y duradero garantizado.</div><div class="service-price">Desde 750€ · Financiación disponible</div></div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Ortodoncia" loading="lazy">
+        <div class="service-card-body"><div class="service-title">😁 Ortodoncia</div><div class="service-desc">Brackets metálicos, estéticos o alineadores invisibles. Dientes perfectamente alineados para todas las edades.</div><div class="service-price">Desde 1.200€ · Consulta inicial gratis</div></div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1609840112990-4265448268f4?w=600&q=80" alt="Blanqueamiento" loading="lazy">
+        <div class="service-card-body"><div class="service-title">✨ Blanqueamiento</div><div class="service-desc">Blanqueamiento profesional en clínica o con férulas personalizadas para casa. Resultados visibles desde la primera sesión.</div><div class="service-price">Desde 180€</div></div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1598256989014-d9f8f46e9576?w=600&q=80" alt="Endodoncia" loading="lazy">
+        <div class="service-card-body"><div class="service-title">🔬 Endodoncia</div><div class="service-desc">Salvamos tu diente natural eliminando la infección con técnica rotacional y sin dolor. Rapidez y precisión garantizadas.</div><div class="service-price">Desde 250€</div></div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Limpieza Dental" loading="lazy">
+        <div class="service-card-body"><div class="service-title">🧹 Limpieza Dental</div><div class="service-desc">Higiene profesional con ultrasonidos para eliminar sarro y manchas. Incluye revisión y diagnóstico completo.</div><div class="service-price">Desde 60€</div></div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-card-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Odontopediatría" loading="lazy">
+        <div class="service-card-body"><div class="service-title">👶 Odontopediatría</div><div class="service-desc">Cuidamos la salud bucodental de los más pequeños en un ambiente tranquilo y de confianza.</div><div class="service-price">Desde 35€</div></div>
+      </div>
     </div>
-    <div style="margin-top:40px;" class="reveal"><button class="btn btn-primary btn-lg" onclick="openCitaModal()">Solicitar información sobre tratamientos →</button></div>
+    <div style="margin-top:40px;" class="reveal">
+      <button class="btn btn-primary btn-lg" onclick="openCitaModal()">Solicitar información sobre tratamientos →</button>
+    </div>
   </div>
 </section>
+
+<!-- OFFER -->
 <section id="oferta" class="section">
   <div class="container">
     <div class="offer-content">
@@ -346,16 +404,16 @@ tr:hover td{background:var(--off-white);}
     </div>
   </div>
 </section>
+
+<!-- NOSOTROS -->
 <section id="nosotros" class="section" style="background:var(--off-white);">
   <div class="container">
     <div class="about-grid">
-      <div class="about-image reveal">
-        <div style="font-size:5rem;margin-bottom:16px;">🏥</div>
-        <div style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:8px;">La Fuensanta</div>
-        <div style="opacity:0.8;font-size:0.95rem;">Beniaján, Murcia · Desde 2009</div>
-        <div style="margin-top:24px;background:rgba(255,255,255,0.1);border-radius:12px;padding:20px;">
-          <div style="font-size:2rem;font-weight:900;font-family:var(--font-display);">4.9 ⭐</div>
-          <div style="opacity:0.8;font-size:0.88rem;margin-top:4px;">Valoración media · Google</div>
+      <div class="about-img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=800&q=80" alt="Clínica Dental La Fuensanta" style="width:100%;height:420px;object-fit:cover;display:block;">
+        <div class="about-img-badge">
+          <div class="about-img-badge-stars">★★★★★</div>
+          <div><div class="about-img-badge-score">4.9</div><div class="about-img-badge-text">Valoración Google</div></div>
         </div>
       </div>
       <div>
@@ -371,19 +429,44 @@ tr:hover td{background:var(--off-white);}
     </div>
   </div>
 </section>
+
+<!-- TESTIMONIALS -->
 <section id="testimonios" class="section">
   <div class="container text-center">
     <div class="badge reveal">Opiniones reales</div>
     <h2 class="section-title reveal">Lo que dicen nuestros pacientes</h2>
     <p class="section-subtitle reveal">Más de 2.500 familias ya confían en nosotros</p>
     <div class="testimonials-grid">
-      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">Me pusieron implantes hace un año y el resultado es increíble. El equipo es muy profesional y te explican todo con detalle. Sin duda la mejor clínica dental de la zona.</p><div class="testimonial-author"><div class="testimonial-avatar">MR</div><div><div class="testimonial-name">María Rodríguez</div><div class="testimonial-meta">Implantes · Hace 1 año</div></div></div></div>
-      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">Llevé a mi hijo con miedo al dentista y salió encantado. Los dentistas son muy pacientes y el resultado de la ortodoncia ha sido espectacular. Muy recomendable.</p><div class="testimonial-author"><div class="testimonial-avatar">JG</div><div><div class="testimonial-name">Juan García</div><div class="testimonial-meta">Ortodoncia · Hace 8 meses</div></div></div></div>
-      <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">El blanqueamiento quedó genial. En una sola sesión noté una diferencia enorme. El trato es excelente y los precios muy razonables comparado con otras clínicas de Murcia.</p><div class="testimonial-author"><div class="testimonial-avatar">LC</div><div><div class="testimonial-name">Laura Cánovas</div><div class="testimonial-meta">Blanqueamiento · Hace 3 meses</div></div></div></div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Me pusieron implantes hace un año y el resultado es increíble. El equipo es muy profesional y te explican todo con detalle. Sin duda la mejor clínica dental de la zona.</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&q=80" alt="María Rodríguez">
+          <div><div class="testimonial-name">María Rodríguez</div><div class="testimonial-meta">Implantes · Hace 1 año</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Llevé a mi hijo con miedo al dentista y salió encantado. Los dentistas son muy pacientes y el resultado de la ortodoncia ha sido espectacular. Muy recomendable.</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&fit=crop&q=80" alt="Juan García">
+          <div><div class="testimonial-name">Juan García</div><div class="testimonial-meta">Ortodoncia · Hace 8 meses</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">El blanqueamiento quedó genial. En una sola sesión noté una diferencia enorme. El trato es excelente y los precios muy razonables comparado con otras clínicas de Murcia.</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&q=80" alt="Laura Cánovas">
+          <div><div class="testimonial-name">Laura Cánovas</div><div class="testimonial-meta">Blanqueamiento · Hace 3 meses</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<section id="contacto" class="section">
+
+<!-- CONTACT -->
+<section id="contacto" class="section" style="background:var(--off-white);">
   <div class="container">
     <div class="text-center" style="margin-bottom:48px;">
       <div class="badge reveal">Contacto</div>
@@ -401,6 +484,9 @@ tr:hover td{background:var(--off-white);}
           <a href="https://wa.me/34644210097?text=Hola%2C%20quiero%20pedir%20informaci%C3%B3n" target="_blank" class="btn btn-whatsapp btn-lg" style="justify-content:center;">💬 WhatsApp</a>
           <button class="btn btn-accent btn-lg" style="justify-content:center;" onclick="openCitaModal()">📅 Reservar cita gratis</button>
         </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.9!2d-1.0786!3d37.9567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6380e7a0c2a0e1%3A0x0!2sCalle%20Algezares%2074%2C%2030570%20Beniaján%2C%20Murcia!5e0!3m2!1ses!2ses!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
       <div id="cita-form">
         <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--primary);margin-bottom:24px;">📅 Solicita tu cita</h3>
@@ -416,11 +502,13 @@ tr:hover td{background:var(--off-white);}
     </div>
   </div>
 </section>
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="nav-logo" style="font-size:1.4rem;">🦷 La <span style="color:var(--accent)">Fuensanta</span></div>
+        <div class="nav-logo" style="font-size:1.4rem;color:white;">🦷 La <span style="color:var(--accent)">Fuensanta</span></div>
         <p class="footer-desc">Tu clínica dental de confianza en Beniaján, Murcia. Más de 15 años cuidando sonrisas.</p>
       </div>
       <div class="footer-links"><h4>Servicios</h4><ul><li><a href="#servicios">Implantes</a></li><li><a href="#servicios">Ortodoncia</a></li><li><a href="#servicios">Blanqueamiento</a></li><li><a href="#servicios">Endodoncia</a></li><li><a href="#servicios">Limpieza</a></li></ul></div>
@@ -428,27 +516,40 @@ tr:hover td{background:var(--off-white);}
     </div>
     <div class="footer-bottom">
       <span>© 2024 Clínica Dental La Fuensanta · Todos los derechos reservados</span>
-      <span style="cursor:pointer;opacity:0.4;font-size:0.75rem;" onclick="showPanel()">⚙ Panel</span>
+      <span style="cursor:pointer;opacity:0.3;font-size:0.75rem;user-select:none;" onclick="showPanel()">⚙ Panel</span>
     </div>
   </div>
 </footer>
-</div>
 
-<a href="https://wa.me/34644210097?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita" target="_blank" id="wa-float" title="WhatsApp">💬</a>
-<button id="chat-bubble" onclick="toggleChat()" title="Abrir asistente">🤖</button>
+</div><!-- #website -->
 
+<!-- FLOATING WA -->
+<a href="https://wa.me/34644210097?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita" target="_blank" id="wa-float">💬</a>
+
+<!-- CHAT BUBBLE -->
+<button id="chat-bubble" onclick="toggleChat()">🤖</button>
+
+<!-- CHATBOT -->
 <div id="chatbot" class="hidden">
-  <div class="chat-header"><div class="chat-avatar">🦷</div><div class="chat-header-info"><div class="chat-header-name">Asistente La Fuensanta</div><div class="chat-header-status">🟢 En línea ahora</div></div><button class="chat-close" onclick="toggleChat()">✕</button></div>
+  <div class="chat-header">
+    <div class="chat-avatar">🦷</div>
+    <div class="chat-header-info"><div class="chat-header-name">Asistente La Fuensanta</div><div class="chat-header-status">🟢 En línea ahora</div></div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
   <div class="chat-messages" id="chat-messages"></div>
   <div class="chat-quick-btns" id="quick-btns"></div>
-  <div class="chat-input-area"><input type="text" class="chat-input" id="chat-input" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter')sendChatMsg()"><button class="chat-send" onclick="sendChatMsg()">➤</button></div>
+  <div class="chat-input-area">
+    <input type="text" class="chat-input" id="chat-input" placeholder="Escribe tu pregunta...">
+    <button class="chat-send" id="chat-send-btn">➤</button>
+  </div>
 </div>
 
+<!-- CITA MODAL -->
 <div id="cita-modal" class="modal-overlay hidden">
   <div class="modal">
     <button class="modal-close" onclick="closeCitaModal()">✕</button>
     <h3 style="font-family:var(--font-display);color:var(--primary);font-size:1.6rem;margin-bottom:8px;">📅 Pedir Cita</h3>
-    <p style="color:var(--text-light);margin-bottom:24px;font-size:0.9rem;">Rellena el formulario y te llamamos para confirmar tu cita.</p>
+    <p style="color:var(--text-light);margin-bottom:24px;font-size:0.9rem;">Rellena el formulario y te llamamos para confirmar.</p>
     <div class="form-group"><label class="form-label">Nombre *</label><input type="text" class="form-control" id="m-nombre" placeholder="Tu nombre completo"></div>
     <div class="form-group"><label class="form-label">Teléfono *</label><input type="tel" class="form-control" id="m-telefono" placeholder="6XX XXX XXX"></div>
     <div class="form-group"><label class="form-label">Tratamiento</label><select class="form-control" id="m-tratamiento"><option value="">Seleccionar...</option><option>Primera revisión gratuita</option><option>Implantes Dentales</option><option>Ortodoncia</option><option>Blanqueamiento</option><option>Endodoncia</option><option>Limpieza Dental</option><option>Otro</option></select></div>
@@ -458,20 +559,24 @@ tr:hover td{background:var(--off-white);}
   </div>
 </div>
 
+<!-- NOTIFICATIONS -->
 <div id="notif"></div>
 
+<!-- PANEL LOGIN -->
 <div id="panel-login" class="hidden">
   <div class="login-card">
-    <div class="login-logo">🦷 La Fuensanta</div>
+    <div style="font-size:3rem;margin-bottom:12px;">🦷</div>
+    <div class="login-logo">La Fuensanta</div>
     <p class="login-subtitle">Panel de Administración</p>
-    <div class="form-group" style="text-align:left;"><label class="form-label">Usuario</label><input type="text" class="form-control" id="login-user" placeholder="admin"></div>
-    <div class="form-group" style="text-align:left;"><label class="form-label">Contraseña</label><input type="password" class="form-control" id="login-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
-    <button class="btn btn-primary btn-lg" onclick="doLogin()" style="width:100%;justify-content:center;margin-top:8px;">Entrar al Panel</button>
-    <div class="login-err" id="login-err">Usuario o contraseña incorrectos</div>
+    <div class="form-group" style="text-align:left;"><label class="form-label">Usuario</label><input type="text" class="form-control" id="login-user" placeholder="admin" autocomplete="username"></div>
+    <div class="form-group" style="text-align:left;"><label class="form-label">Contraseña</label><input type="password" class="form-control" id="login-pass" placeholder="••••••••" autocomplete="current-password" id="login-pass"></div>
+    <button class="btn btn-primary btn-lg" onclick="doLogin()" style="width:100%;justify-content:center;margin-top:8px;">Entrar al Panel →</button>
+    <div class="login-err" id="login-err">❌ Usuario o contraseña incorrectos</div>
     <button onclick="showWebsite()" style="background:none;border:none;color:var(--text-light);font-size:0.85rem;margin-top:20px;cursor:pointer;">← Volver a la web</button>
   </div>
 </div>
 
+<!-- CRM PANEL -->
 <div id="crm" class="hidden">
   <div class="crm-sidebar">
     <div class="sidebar-header"><div class="sidebar-logo">🦷 La <span>Fuensanta</span></div><div class="sidebar-role">Panel de Gestión</div></div>
@@ -486,14 +591,16 @@ tr:hover td{background:var(--off-white);}
       <div class="sidebar-item" onclick="showCrmPanel('recordatorios',this)"><span class="si-icon">🔔</span> Recordatorios</div>
       <div class="sidebar-item" onclick="showCrmPanel('chatbot-editor',this)"><span class="si-icon">🤖</span> Chatbot</div>
     </nav>
-    <div class="sidebar-bottom"><div class="sidebar-item" onclick="logout()"><span class="si-icon">🚪</span> Cerrar sesión</div></div>
+    <div class="sidebar-bottom"><div class="sidebar-item" onclick="doLogout()"><span class="si-icon">🚪</span> Cerrar sesión</div></div>
   </div>
   <div class="crm-main">
+    <!-- DASHBOARD -->
     <div id="panel-dashboard" class="crm-panel active">
-      <div class="crm-topbar"><h2>Dashboard</h2><button class="btn btn-accent" onclick="showCrmPanel('citas',null)">+ Nueva Cita</button></div>
+      <div class="crm-topbar"><h2>Dashboard</h2><button class="btn btn-accent" onclick="showCrmPanel('citas',null);setTimeout(()=>toggleForm('nueva-cita-form'),100)">+ Nueva Cita</button></div>
       <div class="stat-cards" id="dash-stats"></div>
       <div class="card"><div class="card-title">Últimas citas recibidas</div><div class="table-wrap"><table><thead><tr><th>Paciente</th><th>Tratamiento</th><th>Fecha</th><th>Estado</th></tr></thead><tbody id="dash-citas-table"></tbody></table></div></div>
     </div>
+    <!-- CITAS -->
     <div id="panel-citas" class="crm-panel">
       <div class="crm-topbar"><h2>Citas</h2><button class="btn btn-accent" onclick="toggleForm('nueva-cita-form')">+ Nueva Cita</button></div>
       <div class="card" id="nueva-cita-form" style="display:none;">
@@ -505,21 +612,23 @@ tr:hover td{background:var(--off-white);}
       </div>
       <div class="card"><div class="card-title">Todas las citas<input type="text" class="crm-input" id="citas-search" placeholder="🔍 Buscar..." style="width:200px;margin:0;" oninput="renderCitasTable()"></div><div class="table-wrap"><table><thead><tr><th>Paciente</th><th>Teléfono</th><th>Tratamiento</th><th>Fecha</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="citas-table"></tbody></table></div></div>
     </div>
+    <!-- PACIENTES -->
     <div id="panel-pacientes" class="crm-panel">
       <div class="crm-topbar"><h2>Pacientes</h2><button class="btn btn-accent" onclick="toggleForm('nuevo-paciente-form')">+ Nuevo Paciente</button></div>
       <div class="card" id="nuevo-paciente-form" style="display:none;">
         <div class="card-title">Nuevo Paciente</div>
         <div class="form-row"><div><label class="form-label">Nombre *</label><input type="text" class="crm-input" id="np-nombre" placeholder="Nombre completo"></div><div><label class="form-label">Teléfono *</label><input type="tel" class="crm-input" id="np-tel" placeholder="6XX XXX XXX"></div></div>
         <div class="form-row"><div><label class="form-label">Email</label><input type="email" class="crm-input" id="np-email" placeholder="email@ejemplo.com"></div><div><label class="form-label">Fecha nacimiento</label><input type="date" class="crm-input" id="np-fnac"></div></div>
-        <label class="form-label">Historial / Notas</label><textarea class="crm-input" id="np-historial" rows="3" placeholder="Alergias, historial de tratamientos..."></textarea>
+        <label class="form-label">Historial / Notas</label><textarea class="crm-input" id="np-historial" rows="3" placeholder="Alergias, historial..."></textarea>
         <button class="btn btn-primary" onclick="savePaciente()">Guardar Paciente</button>
       </div>
       <div class="card"><div class="card-title">Lista de pacientes<input type="text" class="crm-input" id="pac-search" placeholder="🔍 Buscar..." style="width:200px;margin:0;" oninput="renderPacientesTable()"></div><div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Teléfono</th><th>Email</th><th>Historial</th><th>Acciones</th></tr></thead><tbody id="pacientes-table"></tbody></table></div></div>
     </div>
+    <!-- PRESUPUESTOS -->
     <div id="panel-presupuestos" class="crm-panel">
       <div class="crm-topbar"><h2>Presupuestos</h2></div>
       <div class="card">
-        <div class="card-title">Calculadora de Presupuesto</div>
+        <div class="card-title">Calculadora</div>
         <label class="form-label">Nombre del paciente</label><input type="text" class="crm-input" id="pres-nombre" placeholder="Nombre del paciente" style="max-width:300px;">
         <div id="budget-treatments"></div>
         <div class="budget-total"><div><div style="font-size:1rem;">Total Presupuesto</div><div style="font-size:0.82rem;opacity:0.7;">IVA incluido</div></div><div class="budget-total-num" id="budget-total-num">0 €</div></div>
@@ -527,83 +636,509 @@ tr:hover td{background:var(--off-white);}
       </div>
       <div class="card" id="presupuestos-card" style="display:none;"><div class="card-title">Presupuestos guardados</div><div id="presupuestos-list"></div></div>
     </div>
+    <!-- RECORDATORIOS -->
     <div id="panel-recordatorios" class="crm-panel">
       <div class="crm-topbar"><h2>Recordatorios</h2></div>
-      <div class="card"><div class="card-title">Plantillas de mensajes</div><div id="reminder-templates"></div><button class="btn btn-primary" onclick="saveReminders()">💾 Guardar cambios</button></div>
-      <div class="card"><div class="card-title">Enviar recordatorio manual</div><label class="form-label">Teléfono del paciente</label><input type="tel" class="crm-input" id="rem-tel" placeholder="+34 6XX XXX XXX" style="max-width:300px;"><label class="form-label">Mensaje</label><textarea class="crm-input" id="rem-msg" rows="4" placeholder="Escribe el mensaje aquí..."></textarea><button class="btn btn-whatsapp" onclick="sendReminderWA()">💬 Enviar por WhatsApp</button></div>
+      <div class="card"><div class="card-title">Plantillas</div><div id="reminder-templates"></div><button class="btn btn-primary" onclick="saveReminders()">💾 Guardar cambios</button></div>
+      <div class="card"><div class="card-title">Enviar recordatorio manual</div><label class="form-label">Teléfono</label><input type="tel" class="crm-input" id="rem-tel" placeholder="+34 6XX XXX XXX" style="max-width:300px;"><label class="form-label">Mensaje</label><textarea class="crm-input" id="rem-msg" rows="4"></textarea><button class="btn btn-whatsapp" onclick="sendReminderWA()">💬 Enviar por WhatsApp</button></div>
     </div>
+    <!-- CHATBOT EDITOR -->
     <div id="panel-chatbot-editor" class="crm-panel">
       <div class="crm-topbar"><h2>Editor del Chatbot</h2></div>
-      <div class="card"><div class="card-title">Preguntas y respuestas</div><p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:20px;">Edita las respuestas del chatbot que aparece en la web pública.</p><div id="qa-list"></div><button class="btn btn-primary" onclick="saveChatbotQA()">💾 Guardar cambios</button></div>
+      <div class="card"><div class="card-title">Preguntas y respuestas</div><p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:20px;">Edita las respuestas del chatbot público.</p><div id="qa-list"></div><button class="btn btn-primary" onclick="saveChatbotQA()">💾 Guardar cambios</button></div>
     </div>
   </div>
 </div>
 
 <script>
-const CONFIG = { clinicName:'Clínica Dental La Fuensanta', phone:'968837316', waNumber:'34644210097', admin:{user:'admin',pass:'fuensanta2024'} };
-const ls = { get:k=>{try{return JSON.parse(localStorage.getItem(k))||[];}catch{return[];}}, set:(k,v)=>localStorage.setItem(k,JSON.stringify(v)) };
-const DEFAULT_QA = [
-  {q:'¿Cuáles son vuestros precios?',a:'Los precios varían según el tratamiento. La primera revisión es GRATIS. Implantes desde 750€, ortodoncia desde 1.200€, blanqueamiento desde 180€, limpieza desde 60€. Pide cita y te hacemos un presupuesto sin compromiso.'},
-  {q:'¿Qué tratamientos realizáis?',a:'Realizamos implantes dentales, ortodoncia (brackets e Invisalign), blanqueamiento, endodoncia, limpiezas, odontopediatría y mucho más. ¡Somos tu clínica integral!'},
-  {q:'¿Cuál es vuestro horario?',a:'Estamos abiertos de lunes a viernes de 9:00 a 14:00 y de 16:00 a 20:00. Los sábados de 9:00 a 13:00. ¡Llámanos o escríbenos!'},
-  {q:'¿Dónde estáis?',a:'Estamos en C/ Algezares 74, 30570 – Beniaján (Murcia). Muy cerca del centro de Beniaján, con parking gratuito en la zona.'},
-  {q:'¿Aceptáis seguros dentales?',a:'Sí, trabajamos con los principales seguros dentales. Consulta con nosotros. También ofrecemos financiación sin intereses.'}
+// ===== CONFIG =====
+var ADMIN_USER = 'admin';
+var ADMIN_PASS = 'fuensanta2024';
+var WA_NUMBER = '34644210097';
+
+// ===== STORAGE (con fallback por si localStorage falla) =====
+var _memStore = {};
+function lsGet(k) {
+  try {
+    var v = localStorage.getItem(k);
+    return v ? JSON.parse(v) : [];
+  } catch(e) {
+    return _memStore[k] || [];
+  }
+}
+function lsSet(k, v) {
+  try {
+    localStorage.setItem(k, JSON.stringify(v));
+  } catch(e) {
+    _memStore[k] = v;
+  }
+}
+
+// ===== DEFAULTS =====
+var DEFAULT_QA = [
+  {q:'¿Cuáles son vuestros precios?', a:'La primera revisión es GRATIS. Implantes desde 750€, ortodoncia desde 1.200€, blanqueamiento desde 180€, limpieza desde 60€. ¡Pide cita y te hacemos un presupuesto sin compromiso!'},
+  {q:'¿Qué tratamientos realizáis?', a:'Implantes, ortodoncia (brackets e Invisalign), blanqueamiento, endodoncia, limpiezas, odontopediatría y mucho más. ¡Somos tu clínica integral!'},
+  {q:'¿Cuál es vuestro horario?', a:'Lunes a viernes: 9:00–14:00 y 16:00–20:00. Sábados: 9:00–13:00. ¡Llámanos o escríbenos cuando quieras!'},
+  {q:'¿Dónde estáis?', a:'C/ Algezares 74, 30570 – Beniaján (Murcia). Muy cerca del centro, con parking gratuito en la zona.'},
+  {q:'¿Aceptáis seguros dentales?', a:'Sí, trabajamos con los principales seguros dentales. También ofrecemos financiación sin intereses.'}
 ];
-const DEFAULT_REMINDERS = [
-  {name:'Recordatorio de cita',template:'Hola {nombre} 👋 Te recordamos que tienes una cita en Clínica Dental La Fuensanta el día {fecha} a las {hora}. Si necesitas cambiarla llámanos al 968 83 73 16. ¡Te esperamos! 🦷'},
-  {name:'Confirmación de cita',template:'Hola {nombre} ✅ Tu cita en Clínica Dental La Fuensanta ha sido CONFIRMADA para el {fecha} a las {hora}. Recuerda traer tu DNI. ¡Hasta pronto! 😊'},
-  {name:'Seguimiento post-tratamiento',template:'Hola {nombre} 🙏 Esperamos que te hayas recuperado bien de tu tratamiento. Si tienes alguna molestia no dudes en contactarnos. ¡Cuídate! - Clínica Dental La Fuensanta'}
+var DEFAULT_REMINDERS = [
+  {name:'Recordatorio de cita', template:'Hola {nombre} 👋 Te recordamos tu cita en Clínica Dental La Fuensanta el {fecha} a las {hora}. ¿Algún problema? Llámanos al 968 83 73 16. ¡Te esperamos! 🦷'},
+  {name:'Confirmación de cita', template:'Hola {nombre} ✅ Tu cita en Clínica Dental La Fuensanta está CONFIRMADA para el {fecha} a las {hora}. Recuerda traer tu DNI. ¡Hasta pronto! 😊'},
+  {name:'Seguimiento post-tratamiento', template:'Hola {nombre} 🙏 Esperamos que te hayas recuperado bien. Si tienes molestias no dudes en contactarnos. ¡Cuídate! – Clínica Dental La Fuensanta'}
 ];
-const BUDGET_TREATMENTS = [
-  {name:'Implante dental (unitario)',price:750},{name:'Corona sobre implante',price:450},
-  {name:'Ortodoncia completa',price:1500},{name:'Ortodoncia invisible (Invisalign)',price:2200},
-  {name:'Blanqueamiento en clínica',price:280},{name:'Blanqueamiento con férulas',price:180},
-  {name:'Endodoncia (unirradicular)',price:250},{name:'Endodoncia (multirradicular)',price:380},
-  {name:'Limpieza dental profesional',price:60},{name:'Empaste (composite)',price:85},
-  {name:'Extracción simple',price:60},{name:'Extracción cordal',price:180}
+var BUDGET_TREATMENTS = [
+  {name:'Implante dental (unitario)', price:750},
+  {name:'Corona sobre implante', price:450},
+  {name:'Ortodoncia completa', price:1500},
+  {name:'Ortodoncia invisible (Invisalign)', price:2200},
+  {name:'Blanqueamiento en clínica', price:280},
+  {name:'Blanqueamiento con férulas', price:180},
+  {name:'Endodoncia (unirradicular)', price:250},
+  {name:'Endodoncia (multirradicular)', price:380},
+  {name:'Limpieza dental profesional', price:60},
+  {name:'Empaste (composite)', price:85},
+  {name:'Extracción simple', price:60},
+  {name:'Extracción cordal', price:180}
 ];
-window.addEventListener('DOMContentLoaded',()=>{
-  initScrollReveal(); renderBudgetTreatments(); renderReminderTemplates(); renderQAEditor(); renderDashboard();
-  document.querySelectorAll('input[type="date"]').forEach(i=>i.min=new Date().toISOString().split('T')[0]);
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', function() {
+  initScrollReveal();
+  renderBudgetTreatments();
+  renderReminderTemplates();
+  renderQAEditor();
+  renderDashboard();
+
+  // Fechas mínimas
+  var today = new Date().toISOString().split('T')[0];
+  document.querySelectorAll('input[type="date"]').forEach(function(i){ i.min = today; });
+
+  // Chat input enter
+  var ci = document.getElementById('chat-input');
+  if(ci) ci.addEventListener('keydown', function(e){ if(e.key==='Enter') sendChatMsg(); });
+
+  // Chat send button
+  var csb = document.getElementById('chat-send-btn');
+  if(csb) csb.addEventListener('click', sendChatMsg);
+
+  // Modal close on backdrop
+  var mo = document.getElementById('cita-modal');
+  if(mo) mo.addEventListener('click', function(e){ if(e.target===mo) closeCitaModal(); });
+
+  // Login enter key
+  var lp = document.getElementById('login-pass');
+  if(lp) lp.addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
 });
-function initScrollReveal(){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));}
-function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');document.getElementById('nav-cta').classList.toggle('open');}
-function showPanel(){document.getElementById('website').classList.add('hidden');document.getElementById('crm').classList.add('hidden');document.getElementById('panel-login').classList.remove('hidden');}
-function showWebsite(){document.getElementById('panel-login').classList.add('hidden');document.getElementById('crm').classList.add('hidden');document.getElementById('website').classList.remove('hidden');}
-function doLogin(){const u=document.getElementById('login-user').value.trim();const p=document.getElementById('login-pass').value.trim();if(u===CONFIG.admin.user&&p===CONFIG.admin.pass){document.getElementById('panel-login').classList.add('hidden');document.getElementById('crm').classList.remove('hidden');renderDashboard();showNotif('✅ Bienvenido al panel de gestión','success');}else{const e=document.getElementById('login-err');e.style.display='block';setTimeout(()=>e.style.display='none',3000);}}
-function logout(){document.getElementById('crm').classList.add('hidden');document.getElementById('website').classList.remove('hidden');}
-function showCrmPanel(name,el){document.querySelectorAll('.crm-panel').forEach(p=>p.classList.remove('active'));document.getElementById('panel-'+name).classList.add('active');document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));if(el)el.classList.add('active');if(name==='citas')renderCitasTable();if(name==='pacientes')renderPacientesTable();if(name==='presupuestos')renderPresupuestosList();if(name==='dashboard')renderDashboard();if(name==='chatbot-editor')renderQAEditor();if(name==='recordatorios')renderReminderTemplates();}
-function toggleForm(id){const f=document.getElementById(id);f.style.display=f.style.display==='none'?'block':'none';}
-function showNotif(msg,type='info'){const c=document.getElementById('notif');const d=document.createElement('div');d.className='notif-item '+type;d.textContent=msg;c.appendChild(d);setTimeout(()=>d.remove(),3500);}
-function openCitaModal(){document.getElementById('cita-modal').classList.remove('hidden');document.body.style.overflow='hidden';}
-function closeCitaModal(){document.getElementById('cita-modal').classList.add('hidden');document.body.style.overflow='';}
-document.getElementById('cita-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeCitaModal();});
-function submitModal(){const nombre=document.getElementById('m-nombre').value.trim();const tel=document.getElementById('m-telefono').value.trim();if(!nombre||!tel){showNotif('⚠️ Por favor rellena nombre y teléfono','error');return;}saveLead({nombre,telefono:tel,tratamiento:document.getElementById('m-tratamiento').value,fecha:document.getElementById('m-fecha').value,origen:'modal'});document.getElementById('modal-success').style.display='block';showNotif('✅ Cita solicitada correctamente','success');setTimeout(closeCitaModal,3000);}
-function submitForm(){const nombre=document.getElementById('f-nombre').value.trim();const tel=document.getElementById('f-telefono').value.trim();let valid=true;const setErr=(id,e)=>{document.getElementById(id).classList[e?'add':'remove']('error');if(e)valid=false;};setErr('f-nombre',!nombre);setErr('f-telefono',!tel||!/^\d{9,}$/.test(tel.replace(/\s/g,'')));if(!valid)return;saveLead({nombre,telefono:tel,tratamiento:document.getElementById('f-tratamiento').value,fecha:document.getElementById('f-fecha').value,mensaje:document.getElementById('f-mensaje').value,origen:'formulario'});document.getElementById('form-success').style.display='block';showNotif('✅ Solicitud de cita enviada','success');setTimeout(()=>document.getElementById('form-success').style.display='none',5000);}
-function saveLead(data){const leads=ls.get('leads');const id=Date.now().toString();leads.push({id,...data,estado:'pendiente',timestamp:new Date().toISOString()});ls.set('leads',leads);const pacs=ls.get('pacientes');if(!pacs.find(p=>p.telefono===data.telefono)){pacs.push({id:'p'+id,nombre:data.nombre,telefono:data.telefono,email:'',fnac:'',historial:data.tratamiento||'',timestamp:new Date().toISOString()});ls.set('pacientes',pacs);}}
-function saveCita(){const nombre=document.getElementById('nc-nombre').value.trim();const tel=document.getElementById('nc-tel').value.trim();if(!nombre||!tel){showNotif('⚠️ Nombre y teléfono son obligatorios','error');return;}const leads=ls.get('leads');leads.push({id:Date.now().toString(),nombre,telefono:tel,tratamiento:document.getElementById('nc-trat').value,fecha:document.getElementById('nc-fecha').value,notas:document.getElementById('nc-notas').value,estado:'pendiente',origen:'panel',timestamp:new Date().toISOString()});ls.set('leads',leads);const pacs=ls.get('pacientes');if(!pacs.find(p=>p.telefono===tel)){pacs.push({id:'p'+Date.now(),nombre,telefono:tel,email:'',fnac:'',historial:'',timestamp:new Date().toISOString()});ls.set('pacientes',pacs);}showNotif('✅ Cita creada correctamente','success');document.getElementById('nueva-cita-form').style.display='none';['nc-nombre','nc-tel','nc-notas'].forEach(id=>document.getElementById(id).value='');renderCitasTable();renderDashboard();}
-function renderCitasTable(){const leads=ls.get('leads');const q=(document.getElementById('citas-search')?.value||'').toLowerCase();const filtered=leads.filter(l=>!q||(l.nombre||'').toLowerCase().includes(q)||(l.telefono||'').includes(q)||(l.tratamiento||'').toLowerCase().includes(q));const tb=document.getElementById('citas-table');if(!tb)return;if(!filtered.length){tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--text-light);padding:32px;">No hay citas registradas. Los formularios de la web aparecerán aquí automáticamente.</td></tr>';return;}tb.innerHTML=filtered.slice().reverse().map(c=>`<tr><td><strong>${c.nombre||'-'}</strong></td><td>${c.telefono||'-'}</td><td>${c.tratamiento||'-'}</td><td>${c.fecha?fmtDate(c.fecha):'-'}</td><td><select class="action-btn" onchange="updateCitaStatus('${c.id}',this.value)" style="cursor:pointer;"><option value="pendiente" ${c.estado==='pendiente'?'selected':''}>⏳ Pendiente</option><option value="confirmada" ${c.estado==='confirmada'?'selected':''}>✅ Confirmada</option><option value="cancelada" ${c.estado==='cancelada'?'selected':''}>❌ Cancelada</option></select></td><td style="display:flex;gap:6px;flex-wrap:wrap;"><button class="action-btn wa" onclick="sendWA('${c.telefono}','Hola ${c.nombre}, le contactamos desde Clínica Dental La Fuensanta.')">💬 WA</button><button class="action-btn danger" onclick="deleteCita('${c.id}')">🗑</button></td></tr>`).join('');}
-function updateCitaStatus(id,status){const leads=ls.get('leads');const i=leads.findIndex(l=>l.id===id);if(i>-1){leads[i].estado=status;ls.set('leads',leads);renderDashboard();showNotif('Estado actualizado','success');}}
-function deleteCita(id){if(!confirm('¿Eliminar esta cita?'))return;ls.set('leads',ls.get('leads').filter(l=>l.id!==id));showNotif('Cita eliminada','info');renderCitasTable();renderDashboard();}
-function fmtDate(d){if(!d)return'-';try{return new Date(d).toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});}catch{return d;}}
-function savePaciente(){const nombre=document.getElementById('np-nombre').value.trim();const tel=document.getElementById('np-tel').value.trim();if(!nombre||!tel){showNotif('⚠️ Nombre y teléfono son obligatorios','error');return;}const pacs=ls.get('pacientes');pacs.push({id:'p'+Date.now(),nombre,telefono:tel,email:document.getElementById('np-email').value.trim(),fnac:document.getElementById('np-fnac').value,historial:document.getElementById('np-historial').value,timestamp:new Date().toISOString()});ls.set('pacientes',pacs);showNotif('✅ Paciente guardado','success');document.getElementById('nuevo-paciente-form').style.display='none';['np-nombre','np-tel','np-email','np-historial'].forEach(id=>document.getElementById(id).value='');renderPacientesTable();renderDashboard();}
-function renderPacientesTable(){const pacs=ls.get('pacientes');const q=(document.getElementById('pac-search')?.value||'').toLowerCase();const filtered=pacs.filter(p=>!q||(p.nombre||'').toLowerCase().includes(q)||(p.telefono||'').includes(q));const tb=document.getElementById('pacientes-table');if(!tb)return;if(!filtered.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:32px;">No hay pacientes. Se añaden automáticamente cuando llega un formulario.</td></tr>';return;}tb.innerHTML=filtered.slice().reverse().map(p=>`<tr><td><strong>${p.nombre||'-'}</strong></td><td>${p.telefono||'-'}</td><td>${p.email||'-'}</td><td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${p.historial||''}">${p.historial||'-'}</td><td style="display:flex;gap:6px;"><button class="action-btn wa" onclick="sendWA('${p.telefono}','Hola ${p.nombre}, le contactamos desde Clínica Dental La Fuensanta.')">💬 WA</button><button class="action-btn danger" onclick="deletePaciente('${p.id}')">🗑</button></td></tr>`).join('');}
-function deletePaciente(id){if(!confirm('¿Eliminar paciente?'))return;ls.set('pacientes',ls.get('pacientes').filter(p=>p.id!==id));showNotif('Paciente eliminado','info');renderPacientesTable();renderDashboard();}
-function renderBudgetTreatments(){const c=document.getElementById('budget-treatments');if(!c)return;c.innerHTML=BUDGET_TREATMENTS.map((t,i)=>`<div class="budget-item"><div><div style="font-weight:600;font-size:0.95rem;">${t.name}</div><div style="color:var(--text-light);font-size:0.85rem;">${t.price}€ / unidad</div></div><div style="display:flex;align-items:center;gap:12px;"><input type="number" min="0" max="20" value="0" class="crm-input" style="width:70px;margin:0;text-align:center;" id="bt-${i}" oninput="calcTotal()"><span style="color:var(--primary-light);font-weight:700;min-width:60px;text-align:right;" id="bt-sub-${i}">0€</span></div></div>`).join('');}
-function calcTotal(){let total=0;BUDGET_TREATMENTS.forEach((t,i)=>{const qty=parseInt(document.getElementById('bt-'+i)?.value||'0')||0;const sub=qty*t.price;const el=document.getElementById('bt-sub-'+i);if(el)el.textContent=sub+'€';total+=sub;});document.getElementById('budget-total-num').textContent=total.toLocaleString('es-ES')+'€';}
-function savePresupuesto(){const nombre=document.getElementById('pres-nombre').value.trim();const items=[];let total=0;BUDGET_TREATMENTS.forEach((t,i)=>{const qty=parseInt(document.getElementById('bt-'+i)?.value||'0')||0;if(qty>0){items.push({name:t.name,qty,price:t.price,sub:qty*t.price});total+=qty*t.price;}});if(!items.length){showNotif('⚠️ Añade al menos un tratamiento','error');return;}const pres=ls.get('presupuestos');pres.push({id:Date.now().toString(),nombre:nombre||'Sin nombre',items,total,fecha:new Date().toLocaleDateString('es-ES'),timestamp:new Date().toISOString()});ls.set('presupuestos',pres);showNotif('✅ Presupuesto guardado','success');renderPresupuestosList();}
-function sendPresupuestoWA(){const nombre=document.getElementById('pres-nombre').value.trim();const items=[];let total=0;BUDGET_TREATMENTS.forEach((t,i)=>{const qty=parseInt(document.getElementById('bt-'+i)?.value||'0')||0;if(qty>0){items.push(`  - ${t.name} x${qty}: ${qty*t.price}€`);total+=qty*t.price;}});if(!items.length){showNotif('⚠️ Añade tratamientos primero','error');return;}const msg=`Hola ${nombre||'paciente'} 👋\n\nPresupuesto de *Clínica Dental La Fuensanta*:\n\n${items.join('\n')}\n\n*TOTAL: ${total}€*\n\nLlámanos al 968 83 73 16 para confirmar. ¡Muchas gracias! 🦷`;window.open(`https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`,'_blank');}
-function renderPresupuestosList(){const pres=ls.get('presupuestos');const card=document.getElementById('presupuestos-card');const c=document.getElementById('presupuestos-list');if(!c||!card)return;if(!pres.length){card.style.display='none';return;}card.style.display='block';c.innerHTML=pres.slice().reverse().map(p=>`<div style="border:1.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:14px;"><div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;"><div><div style="font-weight:700;">${p.nombre}</div><div style="font-size:0.82rem;color:var(--text-light);">${p.fecha}</div></div><div style="font-family:var(--font-display);font-size:1.5rem;color:var(--primary);">${p.total.toLocaleString('es-ES')}€</div></div><div style="margin-top:10px;font-size:0.85rem;color:var(--text-mid);">${p.items.map(i=>`${i.name} ×${i.qty}`).join(' · ')}</div></div>`).join('');}
-function renderReminderTemplates(){const saved=ls.get('reminders');const data=saved.length?saved:DEFAULT_REMINDERS;const c=document.getElementById('reminder-templates');if(!c)return;c.innerHTML=data.map((r,i)=>`<div class="reminder-template"><div style="font-weight:700;color:var(--primary);margin-bottom:10px;">${r.name}</div><p style="font-size:0.8rem;color:var(--text-light);margin-bottom:8px;">Variables: {nombre}, {fecha}, {hora}</p><textarea class="crm-input" id="rem-tmpl-${i}" rows="4">${r.template}</textarea><button class="action-btn wa" onclick="useTemplate(${i})" style="margin-top:8px;">Usar esta plantilla</button></div>`).join('');}
-function saveReminders(){const saved=ls.get('reminders');const base=saved.length?saved:DEFAULT_REMINDERS;const updated=base.map((r,i)=>({...r,template:document.getElementById('rem-tmpl-'+i)?.value||r.template}));ls.set('reminders',updated);showNotif('✅ Plantillas guardadas','success');}
-function useTemplate(i){const saved=ls.get('reminders');const data=saved.length?saved:DEFAULT_REMINDERS;document.getElementById('rem-msg').value=data[i].template;}
-function sendReminderWA(){const tel=document.getElementById('rem-tel').value.replace(/\s/g,'');const msg=document.getElementById('rem-msg').value;if(!tel||!msg){showNotif('⚠️ Introduce teléfono y mensaje','error');return;}const num=tel.startsWith('+')?tel.replace('+',''):'34'+tel;window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`,'_blank');}
-function renderQAEditor(){const saved=ls.get('chatbot_qa');const data=saved.length?saved:DEFAULT_QA;const c=document.getElementById('qa-list');if(!c)return;c.innerHTML=data.map((qa,i)=>`<div class="qa-item"><div class="qa-question">❓ ${qa.q}</div><textarea class="crm-input" id="qa-ans-${i}" rows="3">${qa.a}</textarea></div>`).join('');}
-function saveChatbotQA(){const saved=ls.get('chatbot_qa');const base=saved.length?saved:DEFAULT_QA;const updated=base.map((qa,i)=>({q:qa.q,a:document.getElementById('qa-ans-'+i)?.value||qa.a}));ls.set('chatbot_qa',updated);showNotif('✅ Chatbot actualizado','success');}
-let chatOpen=false,chatGreeted=false;
-function toggleChat(){chatOpen=!chatOpen;const cb=document.getElementById('chatbot');if(chatOpen){cb.classList.remove('hidden');if(!chatGreeted){chatGreeted=true;setTimeout(()=>addBotMsg('¡Hola! 👋 Soy el asistente de <strong>Clínica Dental La Fuensanta</strong>. ¿En qué puedo ayudarte hoy?'),400);setTimeout(renderQuickBtns,900);}}else{cb.classList.add('hidden');}}
-function addBotMsg(html){const mc=document.getElementById('chat-messages');const d=document.createElement('div');d.className='chat-msg bot';d.innerHTML=html;mc.appendChild(d);mc.scrollTop=mc.scrollHeight;}
-function addUserMsg(text){const mc=document.getElementById('chat-messages');const d=document.createElement('div');d.className='chat-msg user';d.textContent=text;mc.appendChild(d);mc.scrollTop=mc.scrollHeight;}
-function renderQuickBtns(){const qb=document.getElementById('quick-btns');const qa=ls.get('chatbot_qa').length?ls.get('chatbot_qa'):DEFAULT_QA;qb.innerHTML=qa.map((item,i)=>`<button class="quick-btn" onclick="handleQuick(${i})">${item.q}</button>`).join('');qb.innerHTML+=`<button class="quick-btn" style="background:var(--whatsapp);color:white;border-color:var(--whatsapp);" onclick="window.open('https://wa.me/${CONFIG.waNumber}?text=Hola%2C%20quiero%20pedir%20cita','_blank')">💬 Ir al WhatsApp</button>`;qb.innerHTML+=`<button class="quick-btn" style="background:var(--primary);color:white;border-color:var(--primary);" onclick="openCitaModal();toggleChat()">📅 Pedir Cita</button>`;}
-function handleQuick(i){const qa=ls.get('chatbot_qa').length?ls.get('chatbot_qa'):DEFAULT_QA;addUserMsg(qa[i].q);document.getElementById('quick-btns').innerHTML='';showTyping(1000,()=>{addBotMsg(qa[i].a);setTimeout(renderQuickBtns,600);});}
-funct
+
+// ===== SCROLL REVEAL =====
+function initScrollReveal() {
+  if(!window.IntersectionObserver) {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+}
+
+// ===== NAV =====
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
+  document.getElementById('nav-cta').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('nav-links').classList.remove('open');
+  document.getElementById('nav-cta').classList.remove('open');
+}
+
+// ===== VIEWS =====
+function showPanel() {
+  document.getElementById('website').classList.add('hidden');
+  document.getElementById('crm').classList.add('hidden');
+  document.getElementById('panel-login').classList.remove('hidden');
+  // Limpiar campos
+  document.getElementById('login-user').value = '';
+  document.getElementById('login-pass').value = '';
+  document.getElementById('login-err').style.display = 'none';
+}
+function showWebsite() {
+  document.getElementById('panel-login').classList.add('hidden');
+  document.getElementById('crm').classList.add('hidden');
+  document.getElementById('website').classList.remove('hidden');
+}
+
+// ===== LOGIN — lógica robusta sin depender de localStorage para auth =====
+function doLogin() {
+  var u = document.getElementById('login-user').value.trim();
+  var p = document.getElementById('login-pass').value.trim();
+  var errEl = document.getElementById('login-err');
+  errEl.style.display = 'none';
+
+  if(u === ADMIN_USER && p === ADMIN_PASS) {
+    document.getElementById('panel-login').classList.add('hidden');
+    document.getElementById('crm').classList.remove('hidden');
+    renderDashboard();
+    showNotif('✅ Bienvenido al panel de gestión', 'success');
+  } else {
+    errEl.style.display = 'block';
+    document.getElementById('login-pass').value = '';
+    setTimeout(function(){ errEl.style.display='none'; }, 4000);
+  }
+}
+function doLogout() {
+  document.getElementById('crm').classList.add('hidden');
+  document.getElementById('website').classList.remove('hidden');
+}
+
+// ===== CRM NAV =====
+function showCrmPanel(name, el) {
+  document.querySelectorAll('.crm-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('panel-'+name).classList.add('active');
+  document.querySelectorAll('.sidebar-item').forEach(function(i){ i.classList.remove('active'); });
+  if(el) el.classList.add('active');
+  if(name==='citas') renderCitasTable();
+  if(name==='pacientes') renderPacientesTable();
+  if(name==='presupuestos') renderPresupuestosList();
+  if(name==='dashboard') renderDashboard();
+  if(name==='chatbot-editor') renderQAEditor();
+  if(name==='recordatorios') renderReminderTemplates();
+}
+function toggleForm(id) {
+  var f = document.getElementById(id);
+  if(f) f.style.display = f.style.display === 'none' ? 'block' : 'none';
+}
+
+// ===== NOTIFICATIONS =====
+function showNotif(msg, type) {
+  type = type || 'info';
+  var c = document.getElementById('notif');
+  var d = document.createElement('div');
+  d.className = 'notif-item ' + type;
+  d.textContent = msg;
+  c.appendChild(d);
+  setTimeout(function(){ if(d.parentNode) d.parentNode.removeChild(d); }, 3500);
+}
+
+// ===== MODALS =====
+function openCitaModal() {
+  document.getElementById('cita-modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeCitaModal() {
+  document.getElementById('cita-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+function submitModal() {
+  var nombre = document.getElementById('m-nombre').value.trim();
+  var tel = document.getElementById('m-telefono').value.trim();
+  if(!nombre || !tel) { showNotif('⚠️ Por favor rellena nombre y teléfono', 'error'); return; }
+  saveLead({nombre:nombre, telefono:tel, tratamiento:document.getElementById('m-tratamiento').value, fecha:document.getElementById('m-fecha').value, origen:'modal'});
+  document.getElementById('modal-success').style.display = 'block';
+  showNotif('✅ Cita solicitada correctamente', 'success');
+  setTimeout(closeCitaModal, 3000);
+}
+
+// ===== FORM CONTACTO =====
+function submitForm() {
+  var nombre = document.getElementById('f-nombre').value.trim();
+  var tel = document.getElementById('f-telefono').value.trim();
+  var valid = true;
+  function setErr(id, e) { document.getElementById(id).classList[e?'add':'remove']('error'); if(e) valid=false; }
+  setErr('f-nombre', !nombre);
+  setErr('f-telefono', !tel || !/^\d{9,}$/.test(tel.replace(/\s/g,'')));
+  if(!valid) return;
+  saveLead({nombre:nombre, telefono:tel, tratamiento:document.getElementById('f-tratamiento').value, fecha:document.getElementById('f-fecha').value, mensaje:document.getElementById('f-mensaje').value, origen:'formulario'});
+  document.getElementById('form-success').style.display = 'block';
+  showNotif('✅ Solicitud de cita enviada', 'success');
+  setTimeout(function(){ document.getElementById('form-success').style.display='none'; }, 5000);
+}
+
+// ===== LEADS =====
+function saveLead(data) {
+  var leads = lsGet('leads');
+  var id = Date.now().toString();
+  leads.push(Object.assign({id:id, estado:'pendiente', timestamp:new Date().toISOString()}, data));
+  lsSet('leads', leads);
+  var pacs = lsGet('pacientes');
+  if(!pacs.find(function(p){ return p.telefono === data.telefono; })) {
+    pacs.push({id:'p'+id, nombre:data.nombre, telefono:data.telefono, email:'', fnac:'', historial:data.tratamiento||'', timestamp:new Date().toISOString()});
+    lsSet('pacientes', pacs);
+  }
+}
+
+// ===== CITAS =====
+function saveCita() {
+  var nombre = document.getElementById('nc-nombre').value.trim();
+  var tel = document.getElementById('nc-tel').value.trim();
+  if(!nombre||!tel){ showNotif('⚠️ Nombre y teléfono son obligatorios','error'); return; }
+  var leads = lsGet('leads');
+  leads.push({id:Date.now().toString(), nombre:nombre, telefono:tel, tratamiento:document.getElementById('nc-trat').value, fecha:document.getElementById('nc-fecha').value, notas:document.getElementById('nc-notas').value, estado:'pendiente', origen:'panel', timestamp:new Date().toISOString()});
+  lsSet('leads', leads);
+  var pacs = lsGet('pacientes');
+  if(!pacs.find(function(p){ return p.telefono===tel; })) {
+    pacs.push({id:'p'+Date.now(), nombre:nombre, telefono:tel, email:'', fnac:'', historial:'', timestamp:new Date().toISOString()});
+    lsSet('pacientes', pacs);
+  }
+  showNotif('✅ Cita creada','success');
+  document.getElementById('nueva-cita-form').style.display='none';
+  ['nc-nombre','nc-tel','nc-notas'].forEach(function(id){ document.getElementById(id).value=''; });
+  renderCitasTable(); renderDashboard();
+}
+function renderCitasTable() {
+  var leads = lsGet('leads');
+  var q = (document.getElementById('citas-search')||{value:''}).value.toLowerCase();
+  var filtered = leads.filter(function(l){ return !q||(l.nombre||'').toLowerCase().includes(q)||(l.telefono||'').includes(q)||(l.tratamiento||'').toLowerCase().includes(q); });
+  var tb = document.getElementById('citas-table');
+  if(!tb) return;
+  if(!filtered.length){ tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--text-light);padding:32px;">No hay citas. Los formularios de la web aparecerán aquí automáticamente.</td></tr>'; return; }
+  tb.innerHTML = filtered.slice().reverse().map(function(c){ return '<tr><td><strong>'+(c.nombre||'-')+'</strong></td><td>'+(c.telefono||'-')+'</td><td>'+(c.tratamiento||'-')+'</td><td>'+(c.fecha?fmtDate(c.fecha):'-')+'</td><td><select class="action-btn" onchange="updateCitaStatus(\''+c.id+'\',this.value)" style="cursor:pointer;"><option value="pendiente"'+(c.estado==='pendiente'?' selected':'>')+'>⏳ Pendiente</option><option value="confirmada"'+(c.estado==='confirmada'?' selected':'')+'>✅ Confirmada</option><option value="cancelada"'+(c.estado==='cancelada'?' selected':'')+'>❌ Cancelada</option></select></td><td style="display:flex;gap:6px;flex-wrap:wrap;"><button class="action-btn wa" onclick="sendWA(\''+c.telefono+'\',\'Hola '+c.nombre+', le contactamos desde Clínica Dental La Fuensanta.\')">💬 WA</button><button class="action-btn danger" onclick="deleteCita(\''+c.id+'\')">🗑</button></td></tr>'; }).join('');
+}
+function updateCitaStatus(id, status) {
+  var leads = lsGet('leads');
+  var i = leads.findIndex(function(l){ return l.id===id; });
+  if(i>-1){ leads[i].estado=status; lsSet('leads',leads); renderDashboard(); showNotif('Estado actualizado','success'); }
+}
+function deleteCita(id) {
+  if(!confirm('¿Eliminar esta cita?')) return;
+  lsSet('leads', lsGet('leads').filter(function(l){ return l.id!==id; }));
+  showNotif('Cita eliminada','info'); renderCitasTable(); renderDashboard();
+}
+function fmtDate(d) {
+  if(!d) return '-';
+  try{ return new Date(d).toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}); }catch(e){ return d; }
+}
+
+// ===== PACIENTES =====
+function savePaciente() {
+  var nombre = document.getElementById('np-nombre').value.trim();
+  var tel = document.getElementById('np-tel').value.trim();
+  if(!nombre||!tel){ showNotif('⚠️ Nombre y teléfono son obligatorios','error'); return; }
+  var pacs = lsGet('pacientes');
+  pacs.push({id:'p'+Date.now(), nombre:nombre, telefono:tel, email:document.getElementById('np-email').value.trim(), fnac:document.getElementById('np-fnac').value, historial:document.getElementById('np-historial').value, timestamp:new Date().toISOString()});
+  lsSet('pacientes', pacs);
+  showNotif('✅ Paciente guardado','success');
+  document.getElementById('nuevo-paciente-form').style.display='none';
+  ['np-nombre','np-tel','np-email','np-historial'].forEach(function(id){ document.getElementById(id).value=''; });
+  renderPacientesTable(); renderDashboard();
+}
+function renderPacientesTable() {
+  var pacs = lsGet('pacientes');
+  var q = (document.getElementById('pac-search')||{value:''}).value.toLowerCase();
+  var filtered = pacs.filter(function(p){ return !q||(p.nombre||'').toLowerCase().includes(q)||(p.telefono||'').includes(q); });
+  var tb = document.getElementById('pacientes-table');
+  if(!tb) return;
+  if(!filtered.length){ tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--text-light);padding:32px;">No hay pacientes. Se añaden automáticamente con los formularios.</td></tr>'; return; }
+  tb.innerHTML = filtered.slice().reverse().map(function(p){ return '<tr><td><strong>'+(p.nombre||'-')+'</strong></td><td>'+(p.telefono||'-')+'</td><td>'+(p.email||'-')+'</td><td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="'+(p.historial||'')+'">'+(p.historial||'-')+'</td><td style="display:flex;gap:6px;"><button class="action-btn wa" onclick="sendWA(\''+p.telefono+'\',\'Hola '+p.nombre+', le contactamos desde Clínica Dental La Fuensanta.\')">💬 WA</button><button class="action-btn danger" onclick="deletePaciente(\''+p.id+'\')">🗑</button></td></tr>'; }).join('');
+}
+function deletePaciente(id) {
+  if(!confirm('¿Eliminar paciente?')) return;
+  lsSet('pacientes', lsGet('pacientes').filter(function(p){ return p.id!==id; }));
+  showNotif('Paciente eliminado','info'); renderPacientesTable(); renderDashboard();
+}
+
+// ===== PRESUPUESTOS =====
+function renderBudgetTreatments() {
+  var c = document.getElementById('budget-treatments');
+  if(!c) return;
+  c.innerHTML = BUDGET_TREATMENTS.map(function(t,i){ return '<div class="budget-item"><div><div style="font-weight:600;font-size:0.95rem;">'+t.name+'</div><div style="color:var(--text-light);font-size:0.85rem;">'+t.price+'€ / unidad</div></div><div style="display:flex;align-items:center;gap:12px;"><input type="number" min="0" max="20" value="0" class="crm-input" style="width:70px;margin:0;text-align:center;" id="bt-'+i+'" oninput="calcTotal()"><span style="color:var(--primary-light);font-weight:700;min-width:60px;text-align:right;" id="bt-sub-'+i+'">0€</span></div></div>'; }).join('');
+}
+function calcTotal() {
+  var total = 0;
+  BUDGET_TREATMENTS.forEach(function(t,i){
+    var qty = parseInt((document.getElementById('bt-'+i)||{value:'0'}).value)||0;
+    var sub = qty * t.price;
+    var el = document.getElementById('bt-sub-'+i);
+    if(el) el.textContent = sub+'€';
+    total += sub;
+  });
+  document.getElementById('budget-total-num').textContent = total.toLocaleString('es-ES')+'€';
+}
+function savePresupuesto() {
+  var nombre = document.getElementById('pres-nombre').value.trim();
+  var items = []; var total = 0;
+  BUDGET_TREATMENTS.forEach(function(t,i){
+    var qty = parseInt((document.getElementById('bt-'+i)||{value:'0'}).value)||0;
+    if(qty>0){ items.push({name:t.name,qty:qty,price:t.price,sub:qty*t.price}); total+=qty*t.price; }
+  });
+  if(!items.length){ showNotif('⚠️ Añade al menos un tratamiento','error'); return; }
+  var pres = lsGet('presupuestos');
+  pres.push({id:Date.now().toString(), nombre:nombre||'Sin nombre', items:items, total:total, fecha:new Date().toLocaleDateString('es-ES'), timestamp:new Date().toISOString()});
+  lsSet('presupuestos', pres);
+  showNotif('✅ Presupuesto guardado','success'); renderPresupuestosList();
+}
+function sendPresupuestoWA() {
+  var nombre = document.getElementById('pres-nombre').value.trim();
+  var lines = []; var total = 0;
+  BUDGET_TREATMENTS.forEach(function(t,i){
+    var qty = parseInt((document.getElementById('bt-'+i)||{value:'0'}).value)||0;
+    if(qty>0){ lines.push('  - '+t.name+' x'+qty+': '+(qty*t.price)+'€'); total+=qty*t.price; }
+  });
+  if(!lines.length){ showNotif('⚠️ Añade tratamientos primero','error'); return; }
+  var msg = 'Hola '+(nombre||'paciente')+' 👋\n\nPresupuesto de *Clínica Dental La Fuensanta*:\n\n'+lines.join('\n')+'\n\n*TOTAL: '+total+'€*\n\nLlámanos al 968 83 73 16 para confirmar. ¡Gracias! 🦷';
+  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg), '_blank');
+}
+function renderPresupuestosList() {
+  var pres = lsGet('presupuestos');
+  var card = document.getElementById('presupuestos-card');
+  var c = document.getElementById('presupuestos-list');
+  if(!c||!card) return;
+  if(!pres.length){ card.style.display='none'; return; }
+  card.style.display='block';
+  c.innerHTML = pres.slice().reverse().map(function(p){ return '<div style="border:1.5px solid var(--border);border-radius:12px;padding:20px;margin-bottom:14px;"><div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;"><div><div style="font-weight:700;">'+p.nombre+'</div><div style="font-size:0.82rem;color:var(--text-light);">'+p.fecha+'</div></div><div style="font-family:var(--font-display);font-size:1.5rem;color:var(--primary);">'+p.total.toLocaleString('es-ES')+'€</div></div><div style="margin-top:10px;font-size:0.85rem;color:var(--text-mid);">'+p.items.map(function(i){ return i.name+' ×'+i.qty; }).join(' · ')+'</div></div>'; }).join('');
+}
+
+// ===== RECORDATORIOS =====
+function renderReminderTemplates() {
+  var saved = lsGet('reminders');
+  var data = saved.length ? saved : DEFAULT_REMINDERS;
+  var c = document.getElementById('reminder-templates');
+  if(!c) return;
+  c.innerHTML = data.map(function(r,i){ return '<div class="reminder-template"><div style="font-weight:700;color:var(--primary);margin-bottom:10px;">'+r.name+'</div><p style="font-size:0.8rem;color:var(--text-light);margin-bottom:8px;">Variables: {nombre}, {fecha}, {hora}</p><textarea class="crm-input" id="rem-tmpl-'+i+'" rows="4">'+r.template+'</textarea><button class="action-btn wa" onclick="useTemplate('+i+')" style="margin-top:8px;">Usar esta plantilla</button></div>'; }).join('');
+}
+function saveReminders() {
+  var saved = lsGet('reminders');
+  var base = saved.length ? saved : DEFAULT_REMINDERS;
+  var updated = base.map(function(r,i){ return Object.assign({},r,{template:(document.getElementById('rem-tmpl-'+i)||{value:r.template}).value}); });
+  lsSet('reminders', updated);
+  showNotif('✅ Plantillas guardadas','success');
+}
+function useTemplate(i) {
+  var saved = lsGet('reminders');
+  var data = saved.length ? saved : DEFAULT_REMINDERS;
+  var el = document.getElementById('rem-msg');
+  if(el) el.value = data[i].template;
+}
+function sendReminderWA() {
+  var tel = document.getElementById('rem-tel').value.replace(/\s/g,'');
+  var msg = document.getElementById('rem-msg').value;
+  if(!tel||!msg){ showNotif('⚠️ Introduce teléfono y mensaje','error'); return; }
+  var num = tel.startsWith('+') ? tel.replace('+','') : '34'+tel;
+  window.open('https://wa.me/'+num+'?text='+encodeURIComponent(msg), '_blank');
+}
+
+// ===== CHATBOT QA EDITOR =====
+function renderQAEditor() {
+  var saved = lsGet('chatbot_qa');
+  var data = saved.length ? saved : DEFAULT_QA;
+  var c = document.getElementById('qa-list');
+  if(!c) return;
+  c.innerHTML = data.map(function(qa,i){ return '<div class="qa-item"><div class="qa-question">❓ '+qa.q+'</div><textarea class="crm-input" id="qa-ans-'+i+'" rows="3">'+qa.a+'</textarea></div>'; }).join('');
+}
+function saveChatbotQA() {
+  var saved = lsGet('chatbot_qa');
+  var base = saved.length ? saved : DEFAULT_QA;
+  var updated = base.map(function(qa,i){ return {q:qa.q, a:(document.getElementById('qa-ans-'+i)||{value:qa.a}).value}; });
+  lsSet('chatbot_qa', updated);
+  showNotif('✅ Chatbot actualizado','success');
+}
+
+// ===== CHATBOT =====
+var chatOpen = false;
+var chatGreeted = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  var cb = document.getElementById('chatbot');
+  if(chatOpen) {
+    cb.classList.remove('hidden');
+    if(!chatGreeted) {
+      chatGreeted = true;
+      setTimeout(function(){ addBotMsg('¡Hola! 👋 Soy el asistente de <strong>Clínica Dental La Fuensanta</strong>. ¿En qué puedo ayudarte?'); }, 400);
+      setTimeout(renderQuickBtns, 1000);
+    }
+  } else {
+    cb.classList.add('hidden');
+  }
+}
+function addBotMsg(html) {
+  var mc = document.getElementById('chat-messages');
+  var d = document.createElement('div');
+  d.className = 'chat-msg bot';
+  d.innerHTML = html;
+  mc.appendChild(d);
+  mc.scrollTop = mc.scrollHeight;
+}
+function addUserMsg(text) {
+  var mc = document.getElementById('chat-messages');
+  var d = document.createElement('div');
+  d.className = 'chat-msg user';
+  d.textContent = text;
+  mc.appendChild(d);
+  mc.scrollTop = mc.scrollHeight;
+}
+function renderQuickBtns() {
+  var qb = document.getElementById('quick-btns');
+  if(!qb) return;
+  var qa = lsGet('chatbot_qa');
+  var data = qa.length ? qa : DEFAULT_QA;
+  var html = data.map(function(item,i){ return '<button class="quick-btn" onclick="handleQuick('+i+')">'+item.q+'</button>'; }).join('');
+  html += '<button class="quick-btn" style="background:var(--whatsapp);color:white;border-color:var(--whatsapp);" onclick="window.open(\'https://wa.me/'+WA_NUMBER+'?text=Hola%2C%20quiero%20pedir%20cita\',\'_blank\')">💬 WhatsApp</button>';
+  html += '<button class="quick-btn" style="background:var(--primary);color:white;border-color:var(--primary);" onclick="openCitaModal();toggleChat()">📅 Pedir Cita</button>';
+  qb.innerHTML = html;
+}
+function handleQuick(i) {
+  var qa = lsGet('chatbot_qa');
+  var data = qa.length ? qa : DEFAULT_QA;
+  addUserMsg(data[i].q);
+  document.getElementById('quick-btns').innerHTML = '';
+  showTyping(900, function(){ addBotMsg(data[i].a); setTimeout(renderQuickBtns, 600); });
+}
+function showTyping(delay, cb) {
+  var mc = document.getElementById('chat-messages');
+  var td = document.createElement('div');
+  td.className = 'chat-msg bot chat-typing';
+  td.innerHTML = '<span></span><span></span><span></span>';
+  mc.appendChild(td);
+  mc.scrollTop = 9999;
+  setTimeout(function(){ if(td.parentNode) td.parentNode.removeChild(td); cb(); }, delay);
+}
+function sendChatMsg() {
+  var inp = document.getElementById('chat-input');
+  var text = inp.value.trim();
+  if(!text) return;
+  inp.value = '';
+  addUserMsg(text);
+  document.getElementById('quick-btns').innerHTML = '';
+  var qa = lsGet('chatbot_qa');
+  var data = qa.length ? qa : DEFAULT_QA;
+  var tl = text.toLowerCase();
+  var resp = null;
+  for(var j=0; j<data.length; j++) {
+    var kw = data[j].q.toLowerCase().split(' ').filter(function(w){ return w.length>3; });
+    if(kw.some(function(k){ return tl.indexOf(k)>=0; })){ resp = data[j].a; break; }
+  }
+  if(!resp) {
+    if(tl.indexOf('cita')>=0||tl.indexOf('reserv')>=0) resp = '¡Claro! Puedes pedir cita aquí abajo o llamarnos al <strong>968 83 73 16</strong> 📅';
+    else if(tl.indexOf('hola')>=0||tl.indexOf('buenos')>=0||tl.indexOf('buenas')>=0) resp = '¡Hola! 😊 ¿En qué te puedo ayudar?';
+    else if(tl.indexOf('precio')>=0||tl.indexOf('cuánto')>=0||tl.indexOf('cuanto')>=0) resp = 'La primera revisión es GRATIS. Limpiezas desde 60€, blanqueamiento desde 180€, implantes desde 750€. ¡Te hacemos un presupuesto sin compromiso!';
+    else resp = 'Gracias por tu mensaje 😊 Para más información llámanos al <strong>968 83 73 16</strong> o escríbenos por WhatsApp. ¡Encantados de ayudarte!';
+  }
+  showTyping(1000, function(){ addBotMsg(resp); setTimeout(renderQuickBtns, 600); });
+}
+
+// ===== DASHBOARD =====
+function renderDashboard() {
+  var leads = lsGet('leads');
+  var pacs = lsGet('pacientes');
+  var pendientes = leads.filter(function(l){ return l.estado==='pendiente'; }).length;
+  var confirmadas = leads.filter(function(l){ return l.estado==='confirmada'; }).length;
+  var sc = document.getElementById('dash-stats');
+  if(sc) sc.innerHTML = '<div class="stat-card"><div class="stat-card-icon">📅</div><div class="stat-card-num">'+leads.length+'</div><div class="stat-card-label">Total citas</div></div><div class="stat-card"><div class="stat-card-icon">⏳</div><div class="stat-card-num">'+pendientes+'</div><div class="stat-card-label">Pendientes</div></div><div class="stat-card"><div class="stat-card-icon">✅</div><div class="stat-card-num">'+confirmadas+'</div><div class="stat-card-label">Confirmadas</div></div><div class="stat-card"><div class="stat-card-icon">👥</div><div class="stat-card-num">'+pacs.length+'</div><div class="stat-card-label">Pacientes</div></div>';
+  var dt = document.getElementById('dash-citas-table');
+  if(dt) {
+    if(!leads.length){ dt.innerHTML='<tr><td colspan="4" style="text-align:center;padding:32px;color:var(--text-light);">Aún no hay citas. Aparecerán aquí cuando lleguen formularios de la web.</td></tr>'; return; }
+    dt.innerHTML = leads.slice().reverse().slice(0,8).map(function(c){ var color=c.estado==='confirmada'?'#e8f8f0':c.estado==='cancelada'?'#fef2f2':'#fef9e7'; var textcolor=c.estado==='confirmada'?'#1a8a4a':c.estado==='cancelada'?'#c0392b':'#d4880a'; return '<tr><td><strong>'+(c.nombre||'-')+'</strong></td><td>'+(c.tratamiento||'-')+'</td><td>'+(c.fecha?fmtDate(c.fecha):'-')+'</td><td><span style="background:'+color+';color:'+textcolor+';padding:4px 10px;border-radius:30px;font-size:0.8rem;font-weight:600;">'+(c.estado||'pendiente')+'</span></td></tr>'; }).join('');
+  }
+}
+
+// ===== WA HELPER =====
+function sendWA(tel, msg) {
+  if(!tel) return;
+  var num = tel.replace(/\s/g,'').replace('+','');
+  var finalNum = num.startsWith('34') ? num : '34'+num;
+  window.open('https://wa.me/'+finalNum+'?text='+encodeURIComponent(msg), '_blank');
+}
+</script>
+</body>
+</html>
